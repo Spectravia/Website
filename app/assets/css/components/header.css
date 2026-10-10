@@ -169,9 +169,12 @@
 }
 
 @media (min-width: 1024px) {
-  .site-nav,
-  .site-header__cta {
+  .site-nav {
     display: block;
+  }
+
+  .site-header__cta {
+    display: inline-flex;
   }
 
   .menu-toggle,
