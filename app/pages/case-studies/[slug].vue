@@ -152,6 +152,7 @@ const related = computed(() => {
           >
             <p
               class="result__value text-gradient"
+              :class="{ 'result__value--text': result.value.length > 6 }"
               dir="auto"
             >
               {{ result.value }}

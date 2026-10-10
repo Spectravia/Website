@@ -9,7 +9,7 @@ sector: energy
 tags: [xr, remote-assistance, operations]
 icon: lucide:hard-hat
 cover: /images/case-studies/braind-remote-assist.webp
-region: عُمان · الإمارات · الولايات المتحدة · الهند · السعودية
+region: عُمان · الولايات المتحدة · الهند · السعودية
 period: 2024 – مستمر
 solution: BraIND Field Service (Remote Assist + Guides)
 partner: fifthingenium
@@ -43,6 +43,6 @@ insight: في العمليات البحرية، حيث تكون تكاليف ا�
 gallery:
   - src: /images/case-studies/braind-guides.webp
     caption: BraIND Guides — قوائم تحقّق رقمية خطوة بخطوة مثبّتة على المعدّات.
-  - src: /images/case-studies/braind-atex-helmet.webp
+  - src: /images/case-studies/braind-atex-worker.webp
     caption: خوذة واقع معزّز معتمدة لمناطق ATEX Zone 1 — بمعيار IP66 وشبكة 5G وبطارية قابلة للتبديل تكفي وردية كاملة.
 ---

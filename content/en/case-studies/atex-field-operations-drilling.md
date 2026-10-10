@@ -8,7 +8,7 @@ sector: energy
 tags: [xr, remote-assistance, operations]
 icon: lucide:hard-hat
 cover: /images/case-studies/braind-remote-assist.webp
-region: Oman · UAE · USA · India · KSA
+region: Oman · USA · India · KSA
 period: 2024 – ongoing
 solution: BraIND Field Service (Remote Assist + Guides)
 partner: fifthingenium
@@ -42,6 +42,6 @@ insight: In offshore operations, where downtime costs are extremely high, even a
 gallery:
   - src: /images/case-studies/braind-guides.webp
     caption: BraIND Guides — step-by-step digital checklists anchored to the equipment.
-  - src: /images/case-studies/braind-atex-helmet.webp
+  - src: /images/case-studies/braind-atex-worker.webp
     caption: ATEX Zone 1 AR helmet — IP66, 5G, hot-swappable battery for a full shift.
 ---
