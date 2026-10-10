@@ -26,3 +26,4 @@ Thumbs.db
 !.vscode/extensions.json
 .netlify
 .vercel
+release
