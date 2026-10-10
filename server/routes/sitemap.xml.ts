@@ -12,8 +12,9 @@ const localized = (path: string, code: string) =>
 export default defineEventHandler(async (event) => {
   const { public: { siteUrl } } = useRuntimeConfig(event)
 
-  const [partners, docs] = await Promise.all([
+  const [partners, cases, docs] = await Promise.all([
     queryCollection(event, 'partners_en').select('path').all(),
+    queryCollection(event, 'cases_en').select('path').all(),
     queryCollection(event, 'docs_en').select('path').all(),
   ])
 
@@ -21,6 +22,7 @@ export default defineEventHandler(async (event) => {
     ...siteConfig.nav.map(item => item.to),
     siteConfig.headerCta.to,
     ...partners.map(p => p.path),
+    ...cases.map(c => c.path),
     ...docs.map(d => d.path),
   ]
 

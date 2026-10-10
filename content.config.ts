@@ -8,6 +8,7 @@
  */
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 import { contentLocales } from './config/i18n.config'
+import { caseStudySectorKeys, caseStudyTagKeys } from './config/taxonomy.config'
 
 /* ---------- shared schema pieces ---------- */
 
@@ -141,6 +142,37 @@ const definitions = (locale: string) => ({
         link: z.string().optional(),
       })).default([]),
       media: z.array(media).default([]),
+    }),
+  }),
+
+  /** Case studies (structured frontmatter + optional Markdown body) */
+  [`cases_${locale}`]: defineCollection({
+    type: 'page',
+    source: { include: `${locale}/case-studies/*.md`, prefix: '/case-studies' },
+    schema: z.object({
+      order: z.number().default(100),
+      featured: z.boolean().default(false),
+      /** Short anonymised client descriptor, as approved by the client */
+      client: z.string(),
+      sector: z.enum(caseStudySectorKeys),
+      tags: z.array(z.enum(caseStudyTagKeys)).default([]),
+      /** Lucide icon used for the cover when no image is provided */
+      icon: z.string(),
+      cover: z.string().optional(),
+      region: z.string().optional(),
+      period: z.string().optional(),
+      /** Solution / product name shown in the facts panel */
+      solution: z.string(),
+      /** Partner slug when the case was delivered with a partner */
+      partner: z.string().optional(),
+      summary: z.string(),
+      challenge: z.array(z.string()).default([]),
+      approach: z.array(z.object({ title: z.string(), text: z.string() })).default([]),
+      results: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
+      /** Headline result shown on cards */
+      highlight: z.object({ value: z.string(), label: z.string() }).optional(),
+      insight: z.string().optional(),
+      gallery: z.array(z.object({ src: z.string(), caption: z.string().optional() })).default([]),
     }),
   }),
 

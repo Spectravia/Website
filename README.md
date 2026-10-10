@@ -41,6 +41,7 @@ npm run dev             # http://localhost:3000
 config/                 ← everything "parametric" (non-secret)
   site.config.ts          brand assets, contact details, navigation, footer, social links, form topics
   i18n.config.ts          locales (code, language, direction)
+  taxonomy.config.ts      case-study tags and sectors (controlled vocabulary)
 content/                ← all page copy, one folder per locale (mirrored)
   en/ | ar/
     pages/*.yml           structured copy for home, services, industries, partners, about, contact
@@ -48,6 +49,7 @@ content/                ← all page copy, one folder per locale (mirrored)
     industries/*.yml      sectors
     team/*.yml            leadership team
     partners/*.md         partner pages (frontmatter + Markdown body)
+    case-studies/*.md     case studies (structured frontmatter)
     docs/*.md             free-form pages (e.g. privacy) → served at /<file-name>
 i18n/locales/           ← UI strings (navigation, buttons, form labels, errors)
 app/
@@ -80,6 +82,7 @@ nuxt.config.ts
 - **Change text** — edit the YAML/Markdown file in `content/en/...` and its mirror in `content/ar/...`. Paragraphs in `text:` / `bio:` fields are separated by a blank line.
 - **Add a team member** — add `content/<locale>/team/<name>.yml` (copy an existing one). Put a square photo in `public/images/team/` and set `photo: /images/team/<file>.webp`; leave it empty to show the initials placeholder.
 - **Add a partner** — add `content/<locale>/partners/<slug>.md` and its images under `public/images/partners/<slug>/`. The page is served at `/partners/<slug>` automatically. Optionally add it to the footer in `config/site.config.ts` and to `partners:` lists in services/industries.
+- **Add a case study** — add `content/<locale>/case-studies/<slug>.md` (copy an existing one) → `/case-studies/<slug>`. `sector` and `tags` must use the keys defined in `config/taxonomy.config.ts` (the build fails otherwise); add new keys there and their labels under `taxonomy` in `i18n/locales/*.json`. Set `featured: true` to show it on the home page and `partner: <slug>` to list it on that partner's page. Without a `cover` image, a branded icon cover (`icon:`) is shown.
 - **Add an industry or service** — add a YAML file to `industries/` or `services/` (`order` controls sorting).
 - **Add a simple page** (legal, etc.) — add `content/<locale>/docs/<name>.md` → `/<name>`.
 - **Videos** — in a partner's `media:` list, switch an entry from `provider: placeholder` to `provider: vimeo` (`id: "<videoId>"` or `"<videoId>:<hash>"` for unlisted videos) or `provider: youtube` (`id: "<videoId>"`). Self-hosted files use `provider: file` with `src:`. Embeds only load when the visitor clicks play.

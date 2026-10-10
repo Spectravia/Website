@@ -6,7 +6,8 @@
     "partners": "شركاؤنا",
     "about": "من نحن",
     "contact": "تواصل معنا",
-    "privacy": "سياسة الخصوصية"
+    "privacy": "سياسة الخصوصية",
+    "caseStudies": "دراسات الحالة"
   },
   "a11y": {
     "skipToContent": "انتقل إلى المحتوى",
@@ -109,5 +110,52 @@
     "region": "الشرق الأوسط وأفريقيا",
     "copyright": "© {year} {name}. جميع الحقوق محفوظة.",
     "motto": "ارتقِ بالأداء عبر الذكاء الغامر"
+  },
+  "caseStudies": {
+    "eyebrow": "دراسات الحالة",
+    "filters": "تصفية دراسات الحالة",
+    "sector": "القطاع",
+    "capability": "القدرة",
+    "all": "الكل",
+    "count": "لا توجد دراسات حالة | دراسة حالة واحدة | {count} دراسات حالة",
+    "noResults": "لا توجد دراسات حالة تطابق هذه المعايير.",
+    "readCase": "اقرأ دراسة الحالة",
+    "client": "العميل",
+    "solution": "الحل",
+    "region": "المنطقة",
+    "period": "الفترة",
+    "deliveredWith": "بالتعاون مع",
+    "resultsEyebrow": "الأثر",
+    "results": "النتائج",
+    "challengeEyebrow": "التحدي",
+    "challenge": "ما الذي كان يجب تغييره",
+    "approachEyebrow": "الحل",
+    "approach": "كيف نفّذنا الحل",
+    "relatedEyebrow": "المزيد من دراسات الحالة",
+    "related": "مشاريع ذات صلة",
+    "withPartner": "بالتعاون مع {name}",
+    "ctaTitle": "هل تواجه تحديًا مشابهًا؟",
+    "ctaText": "أخبرنا عن أهدافك وسنوضّح لك كيف يمكن تحقيق نتائج مماثلة في مؤسستك."
+  },
+  "taxonomy": {
+    "tags": {
+      "ai": "الذكاء الاصطناعي",
+      "xr": "الواقع الممتد",
+      "computer-vision": "الرؤية الحاسوبية",
+      "voice-ai": "الذكاء الاصطناعي الصوتي",
+      "training": "التدريب",
+      "operations": "العمليات",
+      "automation": "الأتمتة",
+      "remote-assistance": "المساعدة عن بُعد",
+      "hse": "الصحة والسلامة والبيئة",
+      "customer-experience": "تجربة العملاء"
+    },
+    "sectors": {
+      "energy": "الطاقة والنفط والغاز",
+      "real-estate": "العقارات",
+      "aviation": "الطيران",
+      "banking": "البنوك",
+      "education": "التعليم"
+    }
   }
 }

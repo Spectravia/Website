@@ -68,8 +68,7 @@
 }
 
 .btn__icon {
-  width: 1.1em;
-  height: 1.1em;
+  font-size: 1.1em;
   transition: transform var(--duration-base) var(--ease-out);
 }
 

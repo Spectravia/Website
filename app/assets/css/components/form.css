@@ -152,8 +152,7 @@ select.form__control {
 
 .alert__icon {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
+  font-size: 20px;
 }
 
 /* Contact info aside */

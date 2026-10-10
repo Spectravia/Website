@@ -9,7 +9,7 @@ import type { Collections } from '@nuxt/content'
 import { contentLocales, defaultLocale } from '../../config/i18n.config'
 import type { ContentLocale } from '../../config/i18n.config'
 
-export type CollectionBase = 'pages' | 'services' | 'industries' | 'team' | 'partners' | 'docs'
+export type CollectionBase = 'pages' | 'services' | 'industries' | 'team' | 'partners' | 'cases' | 'docs'
 export type CollectionItem<N extends CollectionBase> = Collections[`${N}_en`]
 
 /** Resolve the collection name for a locale (schemas are identical across locales). */
@@ -78,6 +78,18 @@ export function usePartners() {
 export function usePartner(slug: string) {
   return useLocalizedAsyncData(`partner:${slug}`, locale =>
     queryCollection(localizedCollection('partners', locale)).path(`/partners/${slug}`).first(),
+  )
+}
+
+export function useCaseStudies() {
+  return useLocalizedAsyncData('cases', locale =>
+    queryCollection(localizedCollection('cases', locale)).order('order', 'ASC').all(),
+  )
+}
+
+export function useCaseStudy(slug: string) {
+  return useLocalizedAsyncData(`case:${slug}`, locale =>
+    queryCollection(localizedCollection('cases', locale)).path(`/case-studies/${slug}`).first(),
   )
 }
 

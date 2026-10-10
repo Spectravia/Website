@@ -22,5 +22,11 @@
 @import './components/form.css' layer(components);
 @import './components/prose.css' layer(components);
 @import './components/cta.css' layer(components);
+@import './components/case-study.css' layer(components);
 
 @import './utilities.css' layer(utilities);
+
+/*
+ * Note: @nuxt/icon injects unlayered CSS (width/height: 1em), which beats any
+ * layered rule. Size icons with `font-size`, never width/height.
+ */

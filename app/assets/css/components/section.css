@@ -124,3 +124,8 @@
   color: var(--color-text-muted);
   font-size: var(--text-sm);
 }
+
+.section__more {
+  margin-block-start: var(--space-7);
+  text-align: center;
+}

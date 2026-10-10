@@ -3,6 +3,7 @@ const { data: page } = await usePageContent('home')
 const { data: services } = await useServices()
 const { data: industries } = await useIndustries()
 const { data: partners } = await usePartners()
+const { data: cases } = await useCaseStudies()
 
 if (!page.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 
@@ -13,6 +14,8 @@ const pillars = computed(() => findSection(page.value, 'pillars'))
 const servicesSection = computed(() => findSection(page.value, 'services'))
 const industriesSection = computed(() => findSection(page.value, 'industries'))
 const partnersSection = computed(() => findSection(page.value, 'partners'))
+const casesSection = computed(() => findSection(page.value, 'cases'))
+const featuredCases = computed(() => (cases.value ?? []).filter(c => c.featured).slice(0, 3))
 </script>
 
 <template>
@@ -123,6 +126,39 @@ const partnersSection = computed(() => findSection(page.value, 'partners'))
             :industry="industry"
             linked
           />
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured case studies -->
+    <section
+      v-if="casesSection && featuredCases.length"
+      class="section section--spaced"
+    >
+      <div class="container">
+        <UiSectionHeader
+          :eyebrow="casesSection.eyebrow"
+          :title="casesSection.title"
+          :lead="casesSection.lead"
+        />
+        <div class="grid grid--3">
+          <BlocksCaseStudyCard
+            v-for="(item, i) in featuredCases"
+            :key="item.path"
+            v-reveal="i * 100"
+            :item="item"
+          />
+        </div>
+        <div
+          v-if="casesSection.cta"
+          class="section__more"
+        >
+          <UiButton
+            :to="casesSection.cta.to"
+            icon="lucide:arrow-right"
+          >
+            {{ casesSection.cta.label }}
+          </UiButton>
         </div>
       </div>
     </section>

@@ -46,11 +46,7 @@
 }
 
 .media-placeholder__icon {
-  width: 56px;
-  height: 56px;
-  padding: var(--space-3);
-  border: 1px solid var(--color-border-strong);
-  border-radius: var(--radius-pill);
+  font-size: 40px;
   color: var(--spectrum-violet);
 }
 
@@ -92,10 +88,8 @@
   transform: scale(1.08);
 }
 
-.media-facade__play svg,
 .media-facade__play .iconify {
-  width: 30px;
-  height: 30px;
+  font-size: 30px;
 }
 
 .media-facade__label {

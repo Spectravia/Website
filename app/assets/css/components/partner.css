@@ -114,8 +114,7 @@
 }
 
 .solution__icon {
-  width: 96px;
-  height: 96px;
+  font-size: 96px;
   color: var(--spectrum-violet);
 }
 

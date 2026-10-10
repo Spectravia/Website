@@ -6,7 +6,8 @@
     "partners": "Partners",
     "about": "About",
     "contact": "Contact us",
-    "privacy": "Privacy Policy"
+    "privacy": "Privacy Policy",
+    "caseStudies": "Case studies"
   },
   "a11y": {
     "skipToContent": "Skip to content",
@@ -109,5 +110,52 @@
     "region": "Middle East & Africa",
     "copyright": "© {year} {name}. All rights reserved.",
     "motto": "Elevate performance with immersive intelligence"
+  },
+  "caseStudies": {
+    "eyebrow": "Case studies",
+    "filters": "Filter case studies",
+    "sector": "Sector",
+    "capability": "Capability",
+    "all": "All",
+    "count": "No case studies | 1 case study | {count} case studies",
+    "noResults": "No case studies match these filters.",
+    "readCase": "Read the case study",
+    "client": "Client",
+    "solution": "Solution",
+    "region": "Region",
+    "period": "Period",
+    "deliveredWith": "Delivered with",
+    "resultsEyebrow": "Impact",
+    "results": "Results",
+    "challengeEyebrow": "The challenge",
+    "challenge": "What needed to change",
+    "approachEyebrow": "The solution",
+    "approach": "How we delivered",
+    "relatedEyebrow": "More case studies",
+    "related": "Related projects",
+    "withPartner": "Delivered with {name}",
+    "ctaTitle": "Facing a similar challenge?",
+    "ctaText": "Tell us about your goals and we'll show you how these results can translate to your organization."
+  },
+  "taxonomy": {
+    "tags": {
+      "ai": "AI",
+      "xr": "XR",
+      "computer-vision": "Computer vision",
+      "voice-ai": "Voice AI",
+      "training": "Training",
+      "operations": "Operations",
+      "automation": "Automation",
+      "remote-assistance": "Remote assistance",
+      "hse": "HSE & safety",
+      "customer-experience": "Customer experience"
+    },
+    "sectors": {
+      "energy": "Energy, Oil & Gas",
+      "real-estate": "Real estate",
+      "aviation": "Aviation",
+      "banking": "Banking",
+      "education": "Education"
+    }
   }
 }

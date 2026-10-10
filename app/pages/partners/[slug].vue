@@ -8,6 +8,7 @@ const localePath = useLocalePath()
 const slug = String(route.params.slug)
 const { data: partner } = await usePartner(slug)
 const { data: industries } = await useIndustries()
+const { data: cases } = await useCaseStudies()
 
 if (!partner.value) throw createError({ statusCode: 404, statusMessage: 'Partner not found', fatal: true })
 
@@ -15,6 +16,8 @@ usePageSeo({
   title: () => partner.value?.name,
   description: () => partner.value?.summary,
 })
+
+const partnerCases = computed(() => (cases.value ?? []).filter(c => c.partner === slug))
 
 const partnerIndustries = computed(() =>
   (industries.value ?? []).filter(i => partner.value?.industries?.includes(i.slug)),
@@ -132,6 +135,26 @@ const partnerIndustries = computed(() =>
           :key="solution.name"
           :solution="solution"
         />
+      </div>
+    </section>
+
+    <!-- Case studies delivered with this partner -->
+    <section
+      v-if="partnerCases.length"
+      class="section"
+    >
+      <div class="container">
+        <UiSectionHeader
+          :eyebrow="t('caseStudies.eyebrow')"
+          :title="t('caseStudies.withPartner', { name: partner.name })"
+        />
+        <div class="grid grid--3">
+          <BlocksCaseStudyCard
+            v-for="item in partnerCases"
+            :key="item.path"
+            :item="item"
+          />
+        </div>
       </div>
     </section>
 

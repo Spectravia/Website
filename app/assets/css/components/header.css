@@ -107,8 +107,7 @@
 }
 
 .lang-switch__icon {
-  width: 1rem;
-  height: 1rem;
+  font-size: 1rem;
 }
 
 .menu-toggle {
@@ -121,8 +120,7 @@
 }
 
 .menu-toggle__icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  font-size: 1.25rem;
 }
 
 /* Mobile drawer */

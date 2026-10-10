@@ -38,6 +38,13 @@ sections:
     eyebrow: Industries
     title: Built for the sectors that power the region
     lead: From oil fields to lecture halls, we tailor proven technologies to the realities of each industry.
+  - id: cases
+    eyebrow: Case studies
+    title: Proven impact, measured results
+    lead: A selection of AI and extended reality projects delivered across the region.
+    cta:
+      label: View all case studies
+      to: /case-studies
   - id: partners
     eyebrow: MEA representation
     title: Global innovators, regional expertise
