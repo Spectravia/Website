@@ -1,0 +1,67 @@
+/* Typography for Markdown content (docs, partner long-form) */
+.prose {
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+}
+
+.prose > * + * {
+  margin-block-start: var(--space-4);
+}
+
+.prose :is(h2, h3, h4) {
+  color: var(--color-text);
+}
+
+.prose h2 {
+  margin-block-start: var(--space-7);
+  font-size: var(--text-xl);
+}
+
+.prose h3 {
+  margin-block-start: var(--space-6);
+  font-size: var(--text-lg);
+}
+
+.prose :is(h2, h3) a {
+  text-decoration: none;
+}
+
+.prose strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.prose a {
+  color: var(--spectrum-violet);
+}
+
+.prose :is(ul, ol) {
+  padding-inline-start: var(--space-5);
+}
+
+.prose li + li {
+  margin-block-start: var(--space-2);
+}
+
+.prose li::marker {
+  color: var(--spectrum-violet);
+}
+
+.prose blockquote {
+  padding-inline-start: var(--space-5);
+  border-inline-start: 3px solid var(--brand-violet);
+  color: var(--color-text);
+  font-style: italic;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.prose :is(th, td) {
+  padding: var(--space-3);
+  border-block-end: 1px solid var(--color-border);
+  text-align: start;
+}

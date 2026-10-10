@@ -1,0 +1,212 @@
+/* Home hero */
+.hero {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: min(92dvh, 900px);
+  padding-block: var(--space-9) var(--space-8);
+  margin-block-start: calc(-1 * var(--header-height));
+  padding-block-start: calc(var(--header-height) + var(--space-8));
+  overflow: hidden;
+}
+
+.hero__visual {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.hero__visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--color-bg) 0%, rgb(11 10 26 / 0.7) 35%, transparent 70%);
+}
+
+[dir='rtl'] .hero__visual {
+  transform: scaleX(-1);
+}
+
+/* Prism visual (BlocksHeroPrism) */
+.prism {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.prism__edge {
+  fill: rgb(123 62 236 / 0.08);
+  stroke: var(--brand-lavender);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.prism__glow {
+  fill: none;
+  stroke: var(--brand-violet);
+  stroke-width: 10;
+  opacity: 0.7;
+}
+
+.prism__dot {
+  fill: var(--brand-lavender);
+}
+
+.prism__in {
+  opacity: 0.8;
+}
+
+.prism__fan--glow {
+  opacity: 0.55;
+}
+
+.prism__stop--violet { stop-color: var(--spectrum-violet); }
+.prism__stop--blue { stop-color: var(--spectrum-blue); }
+.prism__stop--cyan { stop-color: var(--spectrum-cyan); }
+.prism__stop--green { stop-color: var(--spectrum-green); }
+.prism__stop--yellow { stop-color: var(--spectrum-yellow); }
+.prism__stop--red { stop-color: var(--spectrum-red); }
+
+.prism__ray {
+  opacity: 0.75;
+  animation: prism-shimmer 6s ease-in-out infinite;
+}
+
+.prism__ray--2 { animation-delay: -1s; }
+.prism__ray--3 { animation-delay: -2s; }
+.prism__ray--4 { animation-delay: -3s; }
+.prism__ray--5 { animation-delay: -4s; }
+.prism__ray--6 { animation-delay: -5s; }
+
+@keyframes prism-shimmer {
+  0%, 100% { opacity: 0.75; }
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prism__ray {
+    animation: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero__visual {
+    opacity: 0.45;
+  }
+}
+
+@media (min-width: 1100px) {
+  .hero__visual {
+    inset-inline-start: 28%;
+  }
+}
+
+.hero__content {
+  max-width: 760px;
+}
+
+.hero__eyebrow {
+  margin-block-end: var(--space-5);
+}
+
+.hero__title {
+  font-size: var(--text-4xl);
+  font-weight: 600;
+}
+
+.hero__title-highlight {
+  display: block;
+}
+
+.hero__lead {
+  max-width: 56ch;
+  margin-block-start: var(--space-5);
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+}
+
+.hero__actions {
+  margin-block-start: var(--space-7);
+}
+
+.hero__scroll {
+  position: absolute;
+  inset-block-end: var(--space-6);
+  inset-inline-start: 50%;
+  translate: -50% 0;
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(180deg, transparent, var(--spectrum-violet));
+  animation: scroll-hint 2.4s var(--ease-out) infinite;
+}
+
+@keyframes scroll-hint {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll {
+    animation: none;
+  }
+}
+
+/* Inner page header */
+.page-hero {
+  position: relative;
+  padding-block: var(--space-9) var(--space-7);
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset-block-start: -40%;
+  inset-inline-end: -10%;
+  width: 60vmax;
+  height: 60vmax;
+  z-index: -1;
+  background: var(--glow-violet);
+  opacity: 0.7;
+}
+
+.page-hero__title {
+  max-width: 20ch;
+  font-size: var(--text-3xl);
+}
+
+.page-hero__lead {
+  max-width: 60ch;
+  margin-block-start: var(--space-5);
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+}
+
+.page-hero__line {
+  width: 120px;
+  height: 3px;
+  margin-block-start: var(--space-6);
+  border-radius: 3px;
+  background: var(--gradient-prism);
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block-end: var(--space-5);
+  color: var(--color-text-subtle);
+  font-size: var(--text-sm);
+}
+
+.breadcrumbs a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.breadcrumbs__sep {
+  opacity: 0.5;
+}

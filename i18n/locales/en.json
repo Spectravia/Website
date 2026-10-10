@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "industries": "Industries",
+    "partners": "Partners",
+    "about": "About",
+    "contact": "Contact us",
+    "privacy": "Privacy Policy"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "home": "{name} — home",
+    "mainNav": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "breadcrumbs": "Breadcrumbs"
+  },
+  "common": {
+    "learnMore": "Learn more"
+  },
+  "cta": {
+    "title": "Ready to elevate performance?",
+    "text": "Tell us about your goals. A Spectravia consultant will help you find the right immersive, AI or platform solution.",
+    "button": "Speak with a consultant"
+  },
+  "services": {
+    "deliveredWith": "Delivered with"
+  },
+  "industries": {
+    "challenges": "Typical challenges",
+    "solutions": "How we help",
+    "partners": "Relevant partner solutions"
+  },
+  "partners": {
+    "eyebrow": "Partner",
+    "fifthingenium": "Fifth Ingenium",
+    "blippar": "Blippar",
+    "nextworld": "Next World",
+    "rpm": "RPM Training Solutions",
+    "discover": "Discover {name}",
+    "visitWebsite": "Visit official website",
+    "visitSolution": "Explore {name}",
+    "talkToUs": "Talk to our team",
+    "solutionsEyebrow": "Solutions",
+    "solutionsTitle": "What {name} brings to your organization",
+    "mediaEyebrow": "In action",
+    "mediaTitle": "See it in action",
+    "ctaTitle": "Bring {name} to your organization",
+    "ctaText": "Spectravia represents {name} across the Middle East and Africa. Talk to us about demos, pilots and deployment."
+  },
+  "media": {
+    "play": "Play video: {title}",
+    "comingSoon": "Video coming soon"
+  },
+  "contact": {
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "regionLabel": "Coverage",
+    "fields": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "company": "Company",
+      "phone": "Phone",
+      "topic": "Topic",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project, timeline and goals…",
+      "consent": "I agree that Spectravia may use my details to respond to this request, as described in the {policy}."
+    },
+    "topics": {
+      "general": "General enquiry",
+      "xr": "Immersive reality (VR / AR)",
+      "ai": "AI strategy & training",
+      "platforms": "Enterprise applications & platforms",
+      "partnership": "Partnership"
+    },
+    "requiredHint": "Fields marked * are required.",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "status": {
+      "success": "Thank you — your message has been sent. We'll get back to you shortly.",
+      "error": "Sorry, your message could not be sent. Please try again or email us at {email}.",
+      "rateLimited": "You've sent several messages in a short time. Please try again later or email us at {email}."
+    },
+    "errors": {
+      "required": "This field is required.",
+      "email": "Please enter a valid email address.",
+      "tooShort": "Please write a little more (at least 10 characters).",
+      "tooLong": "This text is too long.",
+      "consent": "Please accept so we can respond to your request."
+    }
+  },
+  "docs": {
+    "updated": "Last updated: {date}"
+  },
+  "error": {
+    "notFoundTitle": "Page not found",
+    "notFoundText": "The page you are looking for doesn't exist or has been moved.",
+    "genericTitle": "Something went wrong",
+    "genericText": "An unexpected error occurred. Please try again in a moment.",
+    "backHome": "Back to home"
+  },
+  "footer": {
+    "tagline": "Driving technological advancement with cutting-edge innovation — AI, immersive reality and enterprise platforms for the Middle East, Africa and beyond.",
+    "company": "Company",
+    "partners": "Partners",
+    "contact": "Contact",
+    "region": "Middle East & Africa",
+    "copyright": "© {year} {name}. All rights reserved.",
+    "motto": "Elevate performance with immersive intelligence"
+  }
+}

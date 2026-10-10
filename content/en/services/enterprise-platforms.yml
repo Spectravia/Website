@@ -1,0 +1,17 @@
+slug: enterprise-platforms
+order: 2
+icon: lucide:layers
+title: Enterprise Application & Full Platform Development
+summary: Robust, scalable enterprise applications and complete digital platforms, built end to end.
+text: |
+  We design and build robust, scalable enterprise applications and full digital platforms tailored to the complex needs of modern organizations. Our engineering teams specialize in end-to-end development — from architecture and backend systems to intuitive user interfaces and seamless integrations — ensuring every solution is secure, high-performing and ready for large-scale deployment.
+
+  Our experience spans mission-critical enterprise platforms and custom systems built to support operations, training, collaboration and data intelligence. Whether developing a standalone application or a complete enterprise ecosystem, we deliver platforms that are reliable, future-ready and aligned with your strategic goals.
+features:
+  - Solution architecture and cloud infrastructure
+  - Backend systems, APIs and integrations
+  - Web and mobile user interfaces
+  - Training, collaboration and data-intelligence platforms
+  - Security, performance and scalability by design
+  - Continuous improvement and long-term support
+partners: []

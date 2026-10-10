@@ -1,0 +1,20 @@
+slug: energy
+order: 1
+icon: lucide:flame
+title: Energy, Oil & Gas
+summary: Safer, more efficient operations in hazardous, remote and highly regulated environments.
+challenges:
+  - Expert knowledge concentrated in a few senior technicians
+  - Costly travel and downtime for specialist interventions
+  - Paper-based procedures that are hard to audit
+  - High-risk HSE training that is difficult to simulate safely
+  - Strict data-residency and security requirements
+solutions:
+  - Hands-free AR work instructions and digital checklists with photo evidence
+  - Remote expert assistance with live annotations on equipment
+  - Immersive HSE and digital-twin training without risk to people or assets
+  - Support for ATEX Zone 1 certified smart glasses in hazardous areas
+  - On-premises or in-country deployment for full data sovereignty
+partners:
+  - fifthingenium
+  - nextworld

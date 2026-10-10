@@ -1,0 +1,35 @@
+title: About us
+description: Meet Spectravia's leadership team and discover the mission behind our work in AI, immersive technology and digital transformation.
+hero:
+  eyebrow: About Spectravia
+  title: Technologists, strategists and builders
+  lead: A leadership team with decades of experience across XR, software engineering and digital transformation — in the Middle East, Africa and global markets.
+sections:
+  - id: mission
+    eyebrow: Our mission
+    title: Shaping meaningful digital transformation
+    text: |
+      At Spectravia, our mission is to deliver cutting-edge technology solutions that help our clients accelerate performance and achieve their strategic goals. We are committed to shaping meaningful digital transformation through innovation, collaboration and a relentless focus on excellence.
+
+      With more than 20 years of global experience working on cutting-edge technologies and enterprise-grade products, we bring deep expertise to every project we deliver. Our team comprises highly skilled engineers, innovators and developers who are passionate about building intelligent, immersive and future-ready solutions that empower organizations to grow, transform and lead.
+  - id: values
+    eyebrow: How we work
+    title: Principles behind every engagement
+    items:
+      - title: Practical innovation
+        text: Technology that solves real problems and fits real operations — not experiments for their own sake.
+        icon: lucide:lightbulb
+      - title: Human-centered
+        text: Solutions designed around the people who use them, with training and adoption built in.
+        icon: lucide:users
+      - title: Results-driven
+        text: Clear objectives and measurable impact, from the first pilot to full deployment.
+        icon: lucide:target
+      - title: Regional depth
+        text: Long-standing relationships and market knowledge across the Middle East and Africa.
+        icon: lucide:globe
+  - id: team
+    eyebrow: Our leadership team
+    title: The people behind Spectravia
+  - id: statement
+    text: Innovation should be practical, human-centered and results-driven — a spectrum of intelligent solutions delivered through a clear, purposeful path.

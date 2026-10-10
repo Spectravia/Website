@@ -1,0 +1,41 @@
+{
+  "name": "spectravia-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Spectravia corporate website (Nuxt, SSR, EN/AR)",
+  "engines": {
+    "node": "^22.21.0 || >=24.11.0"
+  },
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "start": "node .output/server/index.mjs",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "vue-tsc --noEmit -p .nuxt/tsconfig.app.json && vue-tsc --noEmit -p .nuxt/tsconfig.server.json",
+    "images": "node scripts/optimize-images.mjs"
+  },
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.142",
+    "@nuxt/content": "^3.16.1",
+    "@nuxt/fonts": "^0.14.0",
+    "@nuxt/icon": "^2.5.1",
+    "@nuxtjs/i18n": "^10.6.0",
+    "nodemailer": "^10.1.0",
+    "nuxt": "^4.6.1",
+    "vue": "^3.5.43",
+    "vue-router": "^5.4.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.17.0",
+    "@types/nodemailer": "^8.0.2",
+    "eslint": "^10.12.0",
+    "sharp": "^0.35.5",
+    "typescript": "^6.0.3",
+    "vue-tsc": "^3.3.12"
+  }
+}

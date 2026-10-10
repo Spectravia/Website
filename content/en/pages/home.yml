@@ -1,0 +1,44 @@
+title: Technology & Innovation Services
+description: Spectravia empowers organizations across the Middle East and Africa with AI, immersive reality and enterprise platforms that elevate performance.
+hero:
+  eyebrow: Technology & Innovation Services
+  title: Elevate performance through
+  highlight: immersive intelligence
+  lead: Driving technological advancement with cutting-edge innovation — AI, extended reality and enterprise platforms that turn digital transformation into measurable results.
+  primaryCta:
+    label: Speak with a consultant
+    to: /contact
+  secondaryCta:
+    label: Explore our services
+    to: /services
+sections:
+  - id: intro
+    image: /images/brand/innovation-studio.webp
+    eyebrow: Spectravia's professional services
+    title: A spectrum of intelligent solutions, delivered through a clear path
+    text: |
+      Spectravia is a technology and innovation company built to empower organizations as they navigate the future of digital transformation. We combine deep expertise in AI, ICT and immersive technologies with strategic insight to help businesses unlock new capabilities, accelerate growth and build resilient digital ecosystems.
+
+      We believe innovation should be practical, human-centered and results-driven. From advanced training and capability development to next-generation digital platforms, we partner with clients across industries to shape smarter experiences, stronger performance and sustainable long-term impact.
+  - id: pillars
+    eyebrow: About Spectravia
+    title: Built on purpose, people and proven delivery
+    items:
+      - title: Our mission
+        text: To deliver cutting-edge technology solutions that help our clients accelerate performance and achieve their strategic goals — shaping meaningful digital transformation through innovation, collaboration and a relentless focus on excellence.
+      - title: Our team
+        text: More than 20 years of global experience with cutting-edge technologies and enterprise-grade products. Our engineers, innovators and developers build intelligent, immersive and future-ready solutions.
+      - title: Our services
+        text: Immersive experience design, artificial intelligence, digital learning and custom software engineering — end-to-end, from concept and architecture to deployment and continuous improvement.
+  - id: services
+    eyebrow: What we do
+    title: Capabilities that move organizations forward
+    lead: Three complementary service lines, delivered with world-class technology partners.
+  - id: industries
+    eyebrow: Industries
+    title: Built for the sectors that power the region
+    lead: From oil fields to lecture halls, we tailor proven technologies to the realities of each industry.
+  - id: partners
+    eyebrow: MEA representation
+    title: Global innovators, regional expertise
+    lead: We proudly represent leading technology companies across the Middle East and Africa.

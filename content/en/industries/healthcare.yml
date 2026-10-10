@@ -1,0 +1,17 @@
+slug: healthcare
+order: 5
+icon: lucide:heart-pulse
+title: Healthcare
+summary: Immersive visualization and training for clinical teams, educators and patients.
+challenges:
+  - Complex anatomy and procedures that are hard to visualize
+  - Limited opportunities for safe, hands-on practice
+  - Communicating diagnoses and treatment plans clearly
+solutions:
+  - 3D holographic visualization of patient data and diagnostic images
+  - Immersive pre-procedure training and collaborative decision-making
+  - Augmented anatomy lessons for medical and dental education
+  - Soft-skills and patient-communication training
+partners:
+  - fifthingenium
+  - rpm

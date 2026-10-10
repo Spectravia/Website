@@ -1,0 +1,19 @@
+slug: manufacturing
+order: 2
+icon: lucide:factory
+title: Manufacturing & Industrial
+summary: Put your best expertise in every worker's hands — on every line and every shift.
+challenges:
+  - Skills gaps and long onboarding for new operators
+  - Quality issues and rework caused by human error
+  - Maintenance knowledge that leaves with retiring experts
+  - Disconnected systems on the shop floor
+solutions:
+  - Step-by-step AR guides anchored to machines
+  - Remote assistance across plants and countries
+  - Real-time visualization of IoT, ERP and MES data in context
+  - VR safety training for warehouses, forklifts and workshops
+  - Integration with CMMS / EAM, ERP and SCADA systems
+partners:
+  - fifthingenium
+  - nextworld

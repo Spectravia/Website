@@ -1,0 +1,118 @@
+/*
+ * Design tokens — the single place to change colours, type, spacing, radii,
+ * shadows and motion. Brand palette is derived from the Spectravia logo.
+ */
+:root {
+  /* ---- Brand ---- */
+  --brand-ink: #0b0a1a;          /* logo background */
+  --brand-violet: #7b3eec;       /* primary */
+  --brand-lavender: #a78bfa;     /* logo mark / "VIA" */
+  --brand-peach: #ffb57f;        /* warm accent */
+
+  /* Spectrum (the prism rays in the logo) */
+  --spectrum-violet: #a78bfa;
+  --spectrum-blue: #60a5fa;
+  --spectrum-cyan: #22d3ee;
+  --spectrum-green: #34d399;
+  --spectrum-yellow: #facc15;
+  --spectrum-red: #f87171;
+
+  /* ---- Semantic colours ---- */
+  --color-bg: var(--brand-ink);
+  --color-bg-raised: #12102a;
+  --color-bg-sunken: #08071300;
+  --color-surface: rgb(255 255 255 / 0.035);
+  --color-surface-hover: rgb(255 255 255 / 0.06);
+  --color-border: rgb(167 139 250 / 0.14);
+  --color-border-strong: rgb(167 139 250 / 0.32);
+  --color-text: #f2f1fb;
+  --color-text-muted: #aba8c9;
+  --color-text-subtle: #7d7a9e;
+  --color-primary: var(--brand-violet);
+  --color-primary-hover: #8f58f5;
+  --color-on-primary: #ffffff;
+  --color-accent: var(--brand-peach);
+  --color-success: var(--spectrum-green);
+  --color-danger: var(--spectrum-red);
+  --color-focus: var(--spectrum-cyan);
+
+  /* ---- Gradients ---- */
+  --gradient-spectrum: linear-gradient(90deg, #7b3eec 0%, #60a5fa 35%, #22d3ee 65%, #34d399 100%);
+  --gradient-prism: linear-gradient(90deg, var(--spectrum-violet), var(--spectrum-blue), var(--spectrum-cyan), var(--spectrum-green), var(--spectrum-yellow), var(--spectrum-red));
+  --gradient-text: linear-gradient(100deg, #c4b5fd 0%, #60a5fa 45%, #22d3ee 75%, #34d399 100%);
+  --gradient-primary: linear-gradient(120deg, #7b3eec 0%, #5b6cf0 100%);
+  --glow-violet: radial-gradient(closest-side, rgb(123 62 236 / 0.35), transparent);
+  --glow-cyan: radial-gradient(closest-side, rgb(34 211 238 / 0.18), transparent);
+
+  /* ---- Typography ---- */
+  --font-display: 'Sora', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  --text-xl: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --text-2xl: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);
+  --text-3xl: clamp(2.25rem, 1.5rem + 3.2vw, 4rem);
+  --text-4xl: clamp(2.5rem, 1.6rem + 3.6vw, 4.5rem);
+
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-normal: 1.65;
+  --tracking-wide: 0.18em;
+
+  /* ---- Spacing (8pt-ish scale) ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --section-gap: clamp(4.5rem, 3rem + 6vw, 8rem);
+
+  /* ---- Layout ---- */
+  --container-max: 1200px;
+  --container-narrow: 760px;
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2rem);
+  --header-height: 76px;
+
+  /* ---- Shape & depth ---- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 10px 30px -10px rgb(0 0 0 / 0.6);
+  --shadow-glow: 0 0 0 1px rgb(167 139 250 / 0.25), 0 18px 50px -18px rgb(123 62 236 / 0.55);
+  --blur-glass: 14px;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-base: 280ms;
+  --duration-slow: 700ms;
+}
+
+/* Arabic: Plex Arabic for everything; slightly looser leading. */
+:root[lang='ar'] {
+  --font-display: 'IBM Plex Sans Arabic', 'Sora', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans Arabic', 'IBM Plex Sans', system-ui, sans-serif;
+  --leading-tight: 1.3;
+  --leading-normal: 1.85;
+  --tracking-wide: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+  }
+}

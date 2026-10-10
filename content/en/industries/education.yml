@@ -1,0 +1,19 @@
+slug: education
+order: 3
+icon: lucide:graduation-cap
+title: Education & Universities
+summary: Immersive, collaborative learning that brings complex subjects to life.
+challenges:
+  - Abstract, three-dimensional subjects that are hard to teach in 2D
+  - Limited lab time, equipment and specimens
+  - Engaging students in hybrid and remote classes
+  - Building lasting digital-teaching capability in faculty
+solutions:
+  - Augmented classrooms with shared, multi-user XR sessions
+  - No-code lesson authoring from existing teaching material
+  - Works across headsets, smartphones and tablets — no headset per student required
+  - AR learning experiences that students can create themselves
+  - Faculty onboarding and training academies
+partners:
+  - fifthingenium
+  - blippar

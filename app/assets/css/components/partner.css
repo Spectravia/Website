@@ -1,0 +1,124 @@
+/* Logo tile used in partner grids and partner hero */
+.logo-tile {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-md);
+  background: rgb(255 255 255 / 0.04);
+  border: 1px solid var(--color-border);
+}
+
+.logo-tile--light {
+  background: #f6f5fb;
+  border-color: transparent;
+}
+
+.logo-tile img {
+  max-width: 100%;
+  max-height: 72px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.logo-tile--lg img {
+  max-height: 110px;
+}
+
+.partner-card__name {
+  font-size: var(--text-lg);
+}
+
+.partner-card__tagline {
+  color: var(--spectrum-violet);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+/* Partner detail hero */
+.partner-hero {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .partner-hero {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+
+.partner-hero__meta {
+  margin-block-start: var(--space-6);
+}
+
+/* Solution blocks on partner pages */
+.solution {
+  display: grid;
+  gap: var(--space-6);
+  padding: var(--space-7) var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+@media (min-width: 960px) {
+  .solution {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    padding: var(--space-8);
+  }
+
+  .solution:nth-of-type(even) .solution__media {
+    order: -1;
+  }
+}
+
+.solution__logo {
+  height: 40px;
+  width: auto;
+  margin-block-end: var(--space-4);
+}
+
+.solution__audience {
+  margin-block-end: var(--space-2);
+  color: var(--brand-peach);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.solution__title {
+  margin-block-end: var(--space-4);
+  font-size: var(--text-2xl);
+}
+
+.solution__media {
+  align-self: center;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.solution__media img {
+  width: 100%;
+  height: auto;
+}
+
+.solution__actions {
+  margin-block-start: var(--space-6);
+}
+
+.solution__features {
+  margin-block-start: var(--space-5);
+}
+
+.solution__icon {
+  width: 96px;
+  height: 96px;
+  color: var(--spectrum-violet);
+}
+
+.solution__title--spaced {
+  margin-block-start: var(--space-5);
+}

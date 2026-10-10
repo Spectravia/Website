@@ -1,0 +1,96 @@
+.btn {
+  --btn-bg: transparent;
+  --btn-fg: var(--color-text);
+  --btn-border: var(--color-border-strong);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 46px;
+  padding: 0 var(--space-5);
+  border: 1px solid var(--btn-border);
+  border-radius: var(--radius-pill);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    transform var(--duration-fast) ease;
+}
+
+.btn:hover {
+  color: var(--btn-fg);
+  border-color: var(--spectrum-violet);
+  background: var(--color-surface-hover);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.btn--primary {
+  --btn-bg: var(--gradient-primary);
+  --btn-fg: var(--color-on-primary);
+  --btn-border: transparent;
+
+  box-shadow: 0 8px 24px -10px rgb(123 62 236 / 0.8);
+}
+
+.btn--primary:hover {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  box-shadow: var(--shadow-glow);
+}
+
+.btn--sm {
+  min-height: 38px;
+  padding: 0 var(--space-4);
+}
+
+.btn--lg {
+  min-height: 54px;
+  padding: 0 var(--space-6);
+  font-size: var(--text-base);
+}
+
+.btn__icon {
+  width: 1.1em;
+  height: 1.1em;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.btn:hover .btn__icon--trail {
+  transform: translateX(3px);
+}
+
+[dir='rtl'] .btn:hover .btn__icon--trail {
+  transform: scaleX(-1) translateX(3px);
+}
+
+/* Inline text link with arrow */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--spectrum-violet);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.link-arrow:hover {
+  color: var(--spectrum-cyan);
+}

@@ -1,0 +1,17 @@
+slug: government
+order: 4
+icon: lucide:landmark
+title: Government & Public Sector
+summary: Digital capability and modern platforms that support national transformation agendas.
+challenges:
+  - Upskilling large workforces for digital transformation
+  - Strict security, sovereignty and compliance requirements
+  - Legacy systems that slow down service delivery
+solutions:
+  - AI literacy and strategy programs from foundations to leadership
+  - Secure, scalable enterprise platforms built for public services
+  - On-premises and private-cloud deployment options
+  - Immersive training for emergency, safety and field teams
+partners:
+  - fifthingenium
+  - rpm

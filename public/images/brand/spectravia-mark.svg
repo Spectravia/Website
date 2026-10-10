@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Spectravia">
+  <rect width="64" height="64" rx="14" fill="#0b0a1a"/>
+  <path d="M10 48 L28 14 L44 48 Z" fill="none" stroke="#a78bfa" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="10" cy="48" r="3.4" fill="#a78bfa"/>
+  <g stroke-width="2.6" stroke-linecap="round">
+    <path d="M40 22 L56 18" stroke="#a78bfa"/>
+    <path d="M41 27 L56 25" stroke="#60a5fa"/>
+    <path d="M42 32 L54 32" stroke="#22d3ee"/>
+    <path d="M43 37 L53 38" stroke="#34d399"/>
+    <path d="M44 42 L52 44" stroke="#facc15"/>
+  </g>
+</svg>

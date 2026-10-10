@@ -1,0 +1,20 @@
+slug: immersive-reality
+order: 1
+icon: lucide:glasses
+title: Immersive Reality Enterprise Solutions
+summary: Virtual and augmented reality that transforms how organizations train, collaborate and operate.
+text: |
+  We deliver advanced virtual and augmented reality solutions designed to transform how organizations train, collaborate and operate. By partnering with top global providers in immersive technology, we bring world-class VR and AR capabilities to enterprise environments across the Middle East, Africa and beyond.
+
+  Our solutions cover a full spectrum of high-impact applications. We enable companies to adopt immersive learning and operational technologies that improve performance, reduce risk and accelerate workforce readiness.
+features:
+  - Health & safety VR training
+  - Soft-skills VR training
+  - AR-powered remote assistance
+  - Real-time collaboration tools
+  - Digital work instructions and digital-twin training
+  - Immersive classrooms for universities
+partners:
+  - fifthingenium
+  - nextworld
+  - blippar
