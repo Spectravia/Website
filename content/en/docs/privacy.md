@@ -40,7 +40,7 @@ We keep enquiry data only for as long as necessary to handle your request and an
 
 ## Your rights
 
-Subject to applicable law, you may request access to, correction of, or deletion of your personal data, object to or restrict its processing, and withdraw your consent at any time. To exercise these rights, contact us at [hi@spectravia.net](mailto:hi@spectravia.net).
+Subject to applicable law, you may request access to, correction of, or deletion of your personal data, object to or restrict its processing, and withdraw your consent at any time. To exercise these rights, contact us through the [contact page](/contact).
 
 ## Security
 
@@ -56,4 +56,4 @@ We may update this policy from time to time. The latest version will always be a
 
 ## Contact
 
-For any question about this policy or your personal data, email [hi@spectravia.net](mailto:hi@spectravia.net).
+For any question about this policy or your personal data, get in touch through the [contact page](/contact).

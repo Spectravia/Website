@@ -13,7 +13,6 @@ const structuredData = {
       'name': site.name,
       'url': siteUrl,
       'logo': `${siteUrl}${site.brand.mark}`,
-      'email': site.contact.email,
       ...(site.social.length ? { sameAs: site.social.map(s => s.href) } : {}),
     },
     {

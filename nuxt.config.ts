@@ -51,7 +51,7 @@ export default defineNuxtConfig({
       /** Sender shown on forwarded emails, e.g. "Spectravia Website <hi@spectravia.net>" */
       from: '',
       /** Comma-separated recipients of contact form submissions */
-      to: siteConfig.contact.email,
+      to: `${siteConfig.contact.emailUser}@${siteConfig.contact.emailDomain}`,
       subjectPrefix: '[Spectravia website]',
     },
     contact: {

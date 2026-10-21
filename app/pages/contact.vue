@@ -41,10 +41,7 @@ const aside = computed(() => findSection(page.value, 'aside'))
               <p class="contact-card__label">
                 {{ t('contact.emailLabel') }}
               </p>
-              <a
-                :href="`mailto:${site.contact.email}`"
-                class="contact-card__value"
-              >{{ site.contact.email }}</a>
+              <UiProtectedEmail class="contact-card__value" />
             </div>
           </div>
 

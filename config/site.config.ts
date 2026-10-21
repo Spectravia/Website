@@ -40,7 +40,9 @@ export const siteConfig = {
   },
 
   contact: {
-    email: 'hi@spectravia.net',
+    /** Split on purpose: the address is never written out in the built HTML/JS (see ProtectedEmail) */
+    emailUser: 'hi',
+    emailDomain: 'spectravia.net',
     phone: '',
     /** i18n key for the address / region line */
     region: 'footer.region',

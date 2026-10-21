@@ -1,0 +1,12 @@
+/* Button that looks like a text link until the email address is revealed. */
+.protected-email {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}

@@ -53,16 +53,12 @@ const year = new Date().getFullYear()
             role="list"
           >
             <li>
-              <a
-                :href="`mailto:${site.contact.email}`"
-                class="site-footer__contact"
-              >
+              <UiProtectedEmail class="site-footer__contact">
                 <Icon
                   name="lucide:mail"
                   aria-hidden="true"
                 />
-                {{ site.contact.email }}
-              </a>
+              </UiProtectedEmail>
             </li>
             <li v-if="site.contact.phone">
               <a

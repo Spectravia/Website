@@ -244,7 +244,7 @@ const errorId = (name: string) => `contact-${name}-error`
           class="alert__icon"
           aria-hidden="true"
         />
-        {{ t(errorKey, { email: site.contact.email }) }}
+        {{ t(errorKey, { email: site.contactEmail() }) }}
       </p>
     </div>
 

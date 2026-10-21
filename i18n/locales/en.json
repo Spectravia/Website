@@ -56,6 +56,7 @@
   },
   "contact": {
     "emailLabel": "Email",
+    "showEmail": "Show email address",
     "phoneLabel": "Phone",
     "regionLabel": "Coverage",
     "fields": {
