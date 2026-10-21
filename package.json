@@ -9,13 +9,17 @@
   },
   "scripts": {
     "dev": "nuxt dev",
-    "build": "nuxt build",
+    "build": "nuxt generate --dotenv .env.static",
+    "build:node": "nuxt build",
     "preview": "nuxt preview",
     "start": "node .output/server/index.mjs",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "nuxt prepare && vue-tsc --noEmit -p .nuxt/tsconfig.app.json && vue-tsc --noEmit -p .nuxt/tsconfig.server.json",
+    "seo:check": "node scripts/seo-check.mjs",
+    "setup": "node scripts/setup.mjs",
+    "deploy": "node scripts/deploy-ftp.mjs",
     "images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
@@ -33,6 +37,7 @@
   "devDependencies": {
     "@nuxt/eslint": "^1.17.0",
     "@types/nodemailer": "^8.0.2",
+    "basic-ftp": "^6.2.3",
     "eslint": "^10.12.0",
     "sharp": "^0.35.5",
     "typescript": "^6.0.3",
