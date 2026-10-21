@@ -1,0 +1,14 @@
+# Only the endpoint is reachable; library and config files are never served.
+Options -Indexes
+
+<FilesMatch "\.php$">
+  Require all denied
+</FilesMatch>
+
+<Files "contact.php">
+  Require all granted
+</Files>
+
+<FilesMatch "^(config(\.example)?\.php|LICENSE)$">
+  Require all denied
+</FilesMatch>

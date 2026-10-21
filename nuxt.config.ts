@@ -59,8 +59,21 @@ export default defineNuxtConfig({
       rateLimitMax: 5,
       rateLimitWindowMinutes: 15,
     },
+    recaptcha: {
+      /** Google reCAPTCHA v3 secret — empty disables verification (NUXT_RECAPTCHA_SECRET_KEY) */
+      secretKey: '',
+      /** Minimum v3 score to accept (0.0 bot … 1.0 human) */
+      minScore: 0.5,
+    },
     public: {
       siteUrl: siteConfig.url,
+      /**
+       * Where the contact form posts. Node build: the built-in API.
+       * Static build: the PHP endpoint (set in .env.static).
+       */
+      contactEndpoint: '/api/contact',
+      /** reCAPTCHA v3 site key (public) — empty disables reCAPTCHA (NUXT_PUBLIC_RECAPTCHA_SITE_KEY) */
+      recaptchaSiteKey: '',
     },
   },
 

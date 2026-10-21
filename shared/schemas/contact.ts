@@ -26,6 +26,8 @@ export const contactSchema = z.object({
   message: requiredText().min(CONTACT_LIMITS.messageMin, 'contact.errors.tooShort').max(CONTACT_LIMITS.message, 'contact.errors.tooLong'),
   consent: z.literal(true, 'contact.errors.consent'),
   locale: z.string().max(10).optional().default('en'),
+  /** Google reCAPTCHA v3 token (verified server-side when a secret key is configured) */
+  recaptchaToken: z.string().max(4000).optional().default(''),
   /** Honeypot: hidden from humans, so any value means a bot. Checked by the API. */
   website: z.string().max(500).optional().default(''),
 })

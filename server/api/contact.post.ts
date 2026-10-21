@@ -27,6 +27,10 @@ export default defineEventHandler(async (event) => {
   // Honeypot filled → silently accept so bots don't learn anything.
   if (data.website) return { ok: true }
 
+  if (!(await verifyRecaptcha(data.recaptchaToken, ip))) {
+    throw createError({ statusCode: 403, statusMessage: 'Captcha verification failed' })
+  }
+
   const email = buildContactEmail(data, { ip, receivedAt: new Date() })
 
   try {
