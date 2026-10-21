@@ -102,9 +102,14 @@ if (dryRun) {
   process.exit(0)
 }
 
-/* ---------- 4. upload ---------- */
-const client = new Client(60_000)
-try {
+/* ---------- 4. upload (reconnects and resumes if the server drops the connection) ---------- */
+const MAX_RECONNECTS = 8
+let next = 0
+let reconnects = 0
+const madeDirs = new Set()
+
+async function connect() {
+  const client = new Client(60_000)
   await client.access({
     host: ftpHost,
     port: ftpPort,
@@ -113,22 +118,35 @@ try {
     secure,
     secureOptions: { rejectUnauthorized: false }, // shared hosting certs often name the server, not your domain
   })
-  const made = new Set()
-  let done = 0
-  for (const [local, remote] of uploads) {
-    const dir = remote.slice(0, remote.lastIndexOf('/')) || '/'
-    if (!made.has(dir)) {
-      await client.ensureDir(dir)
-      made.add(dir)
+  madeDirs.clear() // a new session starts in the login folder
+  return client
+}
+
+while (next < uploads.length) {
+  let client
+  try {
+    client = await connect()
+    while (next < uploads.length) {
+      const [local, remote] = uploads[next]
+      const dir = remote.slice(0, remote.lastIndexOf('/')) || '/'
+      if (!madeDirs.has(dir)) {
+        await client.ensureDir(dir)
+        madeDirs.add(dir)
+      }
+      await client.uploadFrom(local, remote)
+      next++
+      if (next % 25 === 0 || next === uploads.length) console.log(`  ${next}/${uploads.length}`)
     }
-    await client.uploadFrom(local, remote)
-    if (++done % 25 === 0 || done === uploads.length) console.log(`  ${done}/${uploads.length}`)
   }
-  console.log('\nDeployed.')
+  catch (error) {
+    if (error.code === 530 || /login|530/i.test(error.message) || ++reconnects > MAX_RECONNECTS) {
+      fail(`FTP error: ${error.message}`)
+    }
+    console.warn(`  connection lost (${error.message}) - reconnecting and resuming at file ${next + 1}/${uploads.length}...`)
+    await new Promise(r => setTimeout(r, 2000))
+  }
+  finally {
+    client?.close()
+  }
 }
-catch (error) {
-  fail(`FTP error: ${error.message}`)
-}
-finally {
-  client.close()
-}
+console.log('\nDeployed.')
