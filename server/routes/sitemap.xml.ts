@@ -30,6 +30,7 @@ export default defineEventHandler(async (event) => {
     locales.map((locale) => {
       const alternates = locales
         .map(alt => `    <xhtml:link rel="alternate" hreflang="${alt.language}" href="${siteUrl}${localized(path, alt.code)}"/>`)
+        .concat(`    <xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${localized(path, defaultLocale)}"/>`)
         .join('\n')
       return `  <url>\n    <loc>${siteUrl}${localized(path, locale.code)}</loc>\n${alternates}\n  </url>`
     }),
