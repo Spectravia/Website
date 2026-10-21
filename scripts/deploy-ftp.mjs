@@ -43,6 +43,11 @@ const cfg = { ...loadEnv('.env.deploy'), ...process.env }
 for (const key of ['FTP_HOST', 'FTP_USER', 'FTP_PASSWORD']) {
   if (!cfg[key]) fail(`Missing ${key}. Run "npm run setup", then fill in .env.deploy.`)
 }
+// Tolerate pasted values like "ftp://host:21/"
+const hostMatch = String(cfg.FTP_HOST).trim().match(/^(?:[a-z]+:\/\/)?([^/:]+)(?::(\d+))?\/?$/i)
+if (!hostMatch) fail('FTP_HOST looks invalid. Use just the host name or IP, e.g. ftp.example.com')
+const ftpHost = hostMatch[1]
+const ftpPort = Number(cfg.FTP_PORT || hostMatch[2] || 21)
 const secure = (cfg.FTP_SECURE ?? 'true') !== 'false'
 const remoteRoot = cfg.FTP_REMOTE_DIR || '/public_html'
 
@@ -90,7 +95,7 @@ if (!existsSync(join(phpDir, 'config.php'))) {
   console.warn('WARNING: php/config.php not found - the contact form will return 500 until SMTP config exists on the server.')
 }
 
-console.log(`> ${uploads.length} files -> ${cfg.FTP_HOST}:${remoteRoot}`)
+console.log(`> ${uploads.length} files -> ${ftpHost}:${remoteRoot}`)
 if (dryRun) {
   for (const [, remote] of uploads) console.log('  ' + remote)
   console.log('\nDry run: nothing uploaded.')
@@ -101,8 +106,8 @@ if (dryRun) {
 const client = new Client(60_000)
 try {
   await client.access({
-    host: cfg.FTP_HOST,
-    port: Number(cfg.FTP_PORT || 21),
+    host: ftpHost,
+    port: ftpPort,
     user: cfg.FTP_USER,
     password: cfg.FTP_PASSWORD,
     secure,
