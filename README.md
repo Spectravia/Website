@@ -21,15 +21,19 @@ Requires **Node.js 22.21+ or 24 LTS** (Nuxt 4.6 requirement; the built-in `node:
 
 ```bash
 npm install
-cp .env.example .env    # fill in SMTP settings to test the contact form
+npm run setup           # creates local config files (see Deployment)
 npm run dev             # http://localhost:3000
 ```
 
 | Script | What it does |
 |---|---|
 | `npm run dev` | Development server with hot reload |
-| `npm run build` | Production build into `.output/` (prerenders all pages) |
-| `npm run start` | Run the production build (`node .output/server/index.mjs`) |
+| `npm run build` | **Static** build (HTML) into `.output/public/` — the default |
+| `npm run build:node` | Node server build into `.output/` (alternative hosting) |
+| `npm run setup` | Create local config files from templates |
+| `npm run seo:check` | Audit SEO of the built site |
+| `npm run deploy` | Build and upload to the hosting over FTP |
+| `npm run start` | Run the Node build (`node .output/server/index.mjs`) |
 | `npm run preview` | Preview the production build locally |
 | `npm run lint` / `lint:fix` | ESLint (incl. stylistic rules) |
 | `npm run typecheck` | Type-check app and server with `vue-tsc` |
@@ -113,15 +117,53 @@ Secrets and environment-specific values are environment variables (see `.env.exa
 | `NUXT_PUBLIC_SITE_URL` | Canonical URL (SEO, sitemap) |
 | `PORT` / `HOST` | Port and interface the Node server listens on |
 
-## Deployment (Node.js hosting, no Docker)
+## Deployment
 
-1. Build (locally or on the server): `npm ci && npm run build`.
-2. Upload / keep the **`.output/`** folder — it is self-contained (no `node_modules` required at runtime).
-3. Configure the environment variables above in the hosting panel.
-4. Start command / application startup file: **`node .output/server/index.mjs`** (in cPanel "Setup Node.js App", set the startup file to `.output/server/index.mjs`).
-5. Point the domain to the app and enable HTTPS.
+**Primary build: static HTML + PHP** (Hostinger shared hosting, FTP). `npm run build` produces plain HTML in `.output/public/`; the contact form is handled by `php/contact.php` (PHPMailer over SMTP), uploaded to `/api/`.
 
-All pages are prerendered at build time and served as static HTML by the Node server; the server only does work for `/api/contact` (and any non-prerendered route). If running behind a reverse proxy, make sure it forwards `X-Forwarded-For` so rate limiting sees real client IPs.
+### One-time setup (per person / machine)
+
+```bash
+npm install
+npm run setup        # creates the git-ignored local files below from their templates
+```
+
+| File (git-ignored) | What goes in it |
+|---|---|
+| `.env.deploy` | **FTP credentials** (`FTP_HOST`, `FTP_USER`, `FTP_PASSWORD`, `FTP_REMOTE_DIR`). Hostinger: hPanel → Files → FTP Accounts |
+| `php/config.php` | **SMTP** settings and the **reCAPTCHA secret key** for the PHP endpoint. Uploaded to `api/config.php` on deploy (blocked from web access by `.htaccess`) |
+| `.env.static` | Build-time settings: site URL, contact endpoint, **reCAPTCHA site key** (public) |
+| `.env` | Only for local dev / the Node build |
+
+Nothing secret is ever committed; whoever takes over the project runs `npm run setup` and fills these in. No FileZilla needed — the upload is built in.
+
+### Updating the live website
+
+```bash
+npm run deploy               # build + upload over FTP
+npm run deploy -- --dry-run  # build and list what would be uploaded
+```
+
+`npm run deploy` refuses to run while there are uncommitted changes, so the live site always matches git.
+
+### SEO
+
+Built in: unique titles/descriptions per page, canonical + hreflang (EN/AR), Open Graph/Twitter cards, `sitemap.xml`, `robots.txt`, Organization/WebSite JSON-LD, HTTPS and clean-URL rules in `public/.htaccess`. `npm run seo:check` audits the built site (also run automatically by `npm run deploy`, which stops on errors). When adding pages or content, give each a unique `title` and `description` in both languages.
+
+### reCAPTCHA v3
+
+Create keys at https://www.google.com/recaptcha/admin (type v3, add the domain). Site key → `.env.static` (`NUXT_PUBLIC_RECAPTCHA_SITE_KEY`); secret key → `php/config.php` (`recaptcha.secret_key`). Leave both empty to disable. For the Node build use `NUXT_PUBLIC_RECAPTCHA_SITE_KEY` and `NUXT_RECAPTCHA_SECRET_KEY`.
+
+### Alternative: Node.js hosting
+
+`npm run build:node` → run `node .output/server/index.mjs` with the environment variables above (cPanel "Setup Node.js App": startup file `.output/server/index.mjs`). Behind a reverse proxy make sure `X-Forwarded-For` is forwarded so rate limiting sees real client IPs.
+
+## Working rules (git)
+
+- **Every change to content or code is committed** — one commit per logical change (e.g. `Update services copy (EN/AR)`), with a clear message. Do not leave edits uncommitted.
+- **Commit before you deploy.** `npm run deploy` enforces it.
+- Never commit secrets (`.env*`, `php/config.php`); only the `*.example` templates are tracked.
+- When changing copy, update both `content/en/` and `content/ar/` (or note that the Arabic is pending).
 
 ## Content review notes
 
