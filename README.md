@@ -146,6 +146,8 @@ npm run deploy -- --dry-run  # build and list what would be uploaded
 
 `npm run deploy` refuses to run while there are uncommitted changes, so the live site always matches git.
 
+**Netlify preview copy.** A copy of the site may also be hosted at `spectravia.netlify.app` for previews. `public/_headers` tells Netlify to send `X-Robots-Tag: noindex` so that copy stays out of search results; Hostinger ignores the file and `npm run deploy` skips it.
+
 ### SEO
 
 Built in: unique titles/descriptions per page, canonical + hreflang (EN/AR), Open Graph/Twitter cards, `sitemap.xml`, `robots.txt`, Organization/WebSite JSON-LD, HTTPS and clean-URL rules in `public/.htaccess`. `npm run seo:check` audits the built site (also run automatically by `npm run deploy`, which stops on errors). When adding pages or content, give each a unique `title` and `description` in both languages.

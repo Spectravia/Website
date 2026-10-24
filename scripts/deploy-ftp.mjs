@@ -85,7 +85,10 @@ function walk(dir) {
 const toRemote = (base, file, prefix = '') =>
   `${remoteRoot}/${prefix}${relative(base, file).split(sep).join('/')}`.replace(/\/+/g, '/')
 
-const uploads = walk(publicDir).map(f => [f, toRemote(publicDir, f)])
+// _headers is Netlify-only (noindex for the preview copy); never upload it to the live site
+const uploads = walk(publicDir)
+  .filter(f => relative(publicDir, f) !== '_headers')
+  .map(f => [f, toRemote(publicDir, f)])
 
 const phpDir = join(root, 'php')
 for (const f of walk(phpDir)) {
