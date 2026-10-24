@@ -1,25 +1,23 @@
-title: Technology & Innovation Services
-description: Spectravia empowers organizations across the Middle East and Africa with AI, immersive reality and enterprise platforms that elevate performance.
+title: AI, XR & Enterprise Platforms in the Middle East
+description: UAE-based Spectravia helps organizations across the Middle East and Africa adopt AI, train teams with immersive XR and build enterprise platforms that deliver results.
 hero:
-  eyebrow: Technology & Innovation Services
-  title: Elevate performance through
-  highlight: immersive intelligence
-  lead: Driving technological advancement with cutting-edge innovation — AI, extended reality and enterprise platforms that turn digital transformation into measurable results.
+  eyebrow: AI strategy · XR · Enterprise platforms
+  title: AI, XR and enterprise platforms that
+  highlight: train, equip and transform teams
+  lead: From our base in the UAE, we help organizations across the Middle East and Africa build AI capability, train their people with immersive XR and run on platforms we engineer in-house, from the first workshop to full deployment.
   primaryCta:
-    label: Speak with a consultant
-    to: /contact
+    label: Book a 30-minute call
+    to: /contact?topic=call
   secondaryCta:
-    label: Explore our services
-    to: /services
+    label: See our results
+    to: /case-studies
 sections:
   - id: intro
     image: /images/brand/innovation-studio.webp
-    eyebrow: Spectravia's professional services
-    title: A spectrum of intelligent solutions, delivered through a clear path
+    eyebrow: Who we are
+    title: Technology your people actually use
     text: |
-      Spectravia is a technology and innovation company built to empower organizations as they navigate the future of digital transformation. We combine deep expertise in AI, ICT and immersive technologies with strategic insight to help businesses unlock new capabilities, accelerate growth and build resilient digital ecosystems.
-
-      We believe innovation should be practical, human-centered and results-driven. From advanced training and capability development to next-generation digital platforms, we partner with clients across industries to shape smarter experiences, stronger performance and sustainable long-term impact.
+      Spectravia is a technology company based in the UAE and serving the MEA region. We turn AI, XR and enterprise software into skills, tools and platforms your teams use every day.
   - id: pillars
     eyebrow: About Spectravia
     title: Built on purpose, people and proven delivery
@@ -27,13 +25,13 @@ sections:
       - title: Our mission
         text: To deliver cutting-edge technology solutions that help our clients accelerate performance and achieve their strategic goals — shaping meaningful digital transformation through innovation, collaboration and a relentless focus on excellence.
       - title: Our team
-        text: More than 20 years of global experience with cutting-edge technologies and enterprise-grade products. Our engineers, innovators and developers build intelligent, immersive and future-ready solutions.
+        text: 20+ years of combined leadership experience with cutting-edge technologies and enterprise-grade products. Our engineers, innovators and developers build intelligent, immersive and future-ready solutions.
       - title: Our services
-        text: Immersive experience design, artificial intelligence, digital learning and custom software engineering — end-to-end, from concept and architecture to deployment and continuous improvement.
+        text: AI strategy and training, immersive XR and custom platform engineering — end-to-end, from concept and architecture to deployment and continuous improvement.
   - id: services
     eyebrow: What we do
     title: Capabilities that move organizations forward
-    lead: Three complementary service lines, delivered with world-class technology partners.
+    lead: Three complementary service lines. AI and platforms are built in-house; specialist XR is delivered with world-class partners.
   - id: industries
     eyebrow: Industries
     title: Built for the sectors that power the region
@@ -46,6 +44,6 @@ sections:
       label: View all case studies
       to: /case-studies
   - id: partners
-    eyebrow: MEA representation
-    title: Global innovators, regional expertise
-    lead: We proudly represent leading technology companies across the Middle East and Africa.
+    eyebrow: Our partners
+    title: Built in-house, extended by global specialists
+    lead: We design and build AI and platform solutions in-house. For specialist needs, we represent global leaders across the Middle East and Africa — Fifth Ingenium for industrial XR, Blippar for AR, Next World for VR safety training and RPM Training Solutions for performance programmes.
