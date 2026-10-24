@@ -8,6 +8,7 @@ client: شركة طيران إقليمية كبرى منخفضة التكلفة
 sector: aviation
 tags: [ai, computer-vision, operations, customer-experience]
 icon: lucide:luggage
+cover: /images/case-studies/cover-ai-bag-scanning-airline.webp
 solution: نموذج رؤية بالذكاء الاصطناعي داخل تطبيق شركة الطيران
 summary: نموذج رؤية مدرَّب يتعرّف على الحقيبة عبر كاميرا الهاتف، ويقيس حجمها فوريًا، ويخبر المسافرين والطاقم الأرضي على الفور ما إذا كان يمكن نقلها.
 highlight:

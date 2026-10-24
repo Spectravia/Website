@@ -7,6 +7,7 @@ client: Regional educational institution network
 sector: education
 tags: [ai, voice-ai, automation, customer-experience]
 icon: lucide:headset
+cover: /images/case-studies/cover-ai-call-center-agent.webp
 solution: Native Arabic AI call-center agent with 3 integrated workflows
 summary: A virtual agent that answers in natural Saudi Arabic, completes requests directly in the institution's systems and escalates complex cases to a human colleague.
 highlight:

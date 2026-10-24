@@ -7,6 +7,7 @@ client: Major regional low-cost airline
 sector: aviation
 tags: [ai, computer-vision, operations, customer-experience]
 icon: lucide:luggage
+cover: /images/case-studies/cover-ai-bag-scanning-airline.webp
 solution: AI vision model inside the airline's own app
 summary: A trained vision model detects a bag through the phone camera, measures it in real time and instantly tells passengers and ground crew whether it can fly.
 highlight:

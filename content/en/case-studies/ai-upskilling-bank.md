@@ -7,6 +7,7 @@ client: Large regional bank with 300+ branches
 sector: banking
 tags: [ai, training]
 icon: lucide:landmark
+cover: /images/case-studies/cover-ai-upskilling-bank.webp
 region: Saudi Arabia
 solution: Two-track AI training programme with a shared curriculum
 summary: A nationwide programme preparing both everyday staff and decision-makers to use AI productively and safely, just as AI was being integrated into the bank.
