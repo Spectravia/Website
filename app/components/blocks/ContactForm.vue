@@ -6,6 +6,13 @@ const localePath = useLocalePath()
 const site = useSite()
 const { form, errors, status, errorKey, submit } = useContactForm()
 
+// Pre-select a topic from the link, e.g. /contact?topic=call
+const route = useRoute()
+onMounted(() => {
+  const topic = String(route.query.topic ?? '')
+  if ((site.contactForm.topics as readonly string[]).includes(topic)) form.topic = topic
+})
+
 const fieldId = (name: string) => `contact-${name}`
 const errorId = (name: string) => `contact-${name}-error`
 </script>
