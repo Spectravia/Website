@@ -6,8 +6,8 @@ name: RPM Training Solutions
 order: 4
 tagline: RPM Training Solutions
 summary: شريك لتحويل الأداء مقرّه دبي، يمتلك أكثر من عقدين من الخبرة في تقديم برامج مخصّصة للقيادة والمبيعات والتطوير المؤسسي في دول الخليج.
-logo: /images/partners/rpm/logo-white.webp
-logoOnLight: false
+logo: /images/partners/rpm/logo.webp
+logoOnLight: true
 website: https://rpmts.com
 industries:
   - corporate
