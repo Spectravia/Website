@@ -84,7 +84,10 @@ const related = computed(() => {
         <dl class="facts">
           <div class="facts__item">
             <dt>{{ t('caseStudies.client') }}</dt>
-            <dd>{{ item.client }}</dd>
+            <dd>
+              {{ item.client }}
+              <span class="facts__note">{{ t('caseStudies.ndaShort') }}</span>
+            </dd>
           </div>
           <div class="facts__item">
             <dt>{{ t('caseStudies.sector') }}</dt>
@@ -118,15 +121,16 @@ const related = computed(() => {
             <dt>{{ t('caseStudies.period') }}</dt>
             <dd>{{ item.period }}</dd>
           </div>
-          <div
-            v-if="partner"
-            class="facts__item"
-          >
-            <dt>{{ t('caseStudies.deliveredWith') }}</dt>
-            <dd>
+          <div class="facts__item">
+            <dt>{{ t('caseStudies.deliveredBy') }}</dt>
+            <dd v-if="partner">
+              {{ t('caseStudies.withPartnerPrefix') }}
               <NuxtLink :to="localePath(partner.path)">
                 {{ partner.name }}
               </NuxtLink>
+            </dd>
+            <dd v-else>
+              {{ t('caseStudies.inHouse') }}
             </dd>
           </div>
         </dl>

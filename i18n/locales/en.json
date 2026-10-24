@@ -125,7 +125,9 @@
     "solution": "Solution",
     "region": "Region",
     "period": "Period",
-    "deliveredWith": "Delivered with",
+    "deliveredBy": "Delivered by",
+    "inHouse": "Spectravia, in-house",
+    "withPartnerPrefix": "Spectravia with",
     "resultsEyebrow": "Impact",
     "results": "Results",
     "challengeEyebrow": "The challenge",
@@ -136,7 +138,9 @@
     "related": "Related projects",
     "withPartner": "Delivered with {name}",
     "ctaTitle": "Facing a similar challenge?",
-    "ctaText": "Tell us about your goals and we'll show you how these results can translate to your organization."
+    "ctaText": "Tell us about your goals and we'll show you how these results can translate to your organization.",
+    "ndaShort": "Name kept confidential under NDA.",
+    "nda": "Our clients' names are kept confidential under NDA. References are available on request."
   },
   "taxonomy": {
     "tags": {

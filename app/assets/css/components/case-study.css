@@ -197,6 +197,21 @@
   color: var(--spectrum-violet);
 }
 
+.facts__note {
+  display: block;
+  margin-block-start: var(--space-1);
+  color: var(--color-text-subtle);
+  font-size: var(--text-xs);
+  font-weight: 400;
+}
+
+/* Confidentiality note under the case-study grid */
+.case-nda {
+  margin-block-start: var(--space-6);
+  color: var(--color-text-subtle);
+  font-size: var(--text-sm);
+}
+
 .results {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
