@@ -20,12 +20,12 @@
     "seo:check": "node scripts/seo-check.mjs",
     "setup": "node scripts/setup.mjs",
     "deploy": "node scripts/deploy-ftp.mjs",
-    "images": "node scripts/optimize-images.mjs"
+    "images": "node scripts/optimize-images.mjs",
+    "fonts": "node scripts/vendor-fonts.mjs"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.142",
     "@nuxt/content": "^3.16.1",
-    "@nuxt/fonts": "^0.14.0",
     "@nuxt/icon": "^2.5.1",
     "@nuxtjs/i18n": "^10.6.0",
     "nodemailer": "^10.1.0",

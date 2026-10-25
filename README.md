@@ -11,7 +11,7 @@ Corporate website for [Spectravia](https://spectravia.net), built with **Nuxt 4*
 | i18n | `@nuxtjs/i18n` — `en` default at `/`, Arabic at `/ar/...` |
 | Styling | Plain modern CSS with design tokens and cascade layers (no framework) |
 | Icons | `@nuxt/icon` + Lucide (bundled, no runtime CDN) |
-| Fonts | `@nuxt/fonts` — Sora, IBM Plex Sans, IBM Plex Sans Arabic (self-hosted) |
+| Fonts | Sora, IBM Plex Sans, IBM Plex Sans Arabic, committed in `public/fonts` with `app/assets/css/fonts.css` (no download at build time) |
 | Email | `nodemailer` over SMTP |
 | Validation | `zod` schema shared by client and server |
 
@@ -38,6 +38,7 @@ npm run dev             # http://localhost:3000
 | `npm run lint` / `lint:fix` | ESLint (incl. stylistic rules) |
 | `npm run typecheck` | Type-check app and server with `vue-tsc` |
 | `npm run images [-- <folder>]` | Convert PNG/JPG under `public/images` to optimized WebP |
+| `npm run fonts` | Re-copy the font files from npm (Fontsource) into `public/fonts` and regenerate `fonts.css`; edit the list in `scripts/vendor-fonts.mjs` to change fonts |
 
 ## Project structure
 
