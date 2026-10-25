@@ -5,8 +5,8 @@ name: Next World
 order: 2
 tagline: VR safety & soft-skills training
 summary: A turnkey virtual reality training solution — course library, analytics LMS and ready-to-use headsets — for high-risk workplace safety and soft skills.
-logo: /images/partners/nextworld/logo.webp
-logoOnLight: true
+logo: /images/partners/nextworld/logo-light.webp
+logoOnLight: false
 website: https://www.nextworldxr.com
 industries:
   - energy

@@ -5,8 +5,8 @@ name: Blippar
 order: 3
 tagline: Augmented reality for brands, creators and education
 summary: A pioneer of augmented reality since 2011, offering no-code AR creation, a WebAR SDK, education tools and a creative studio — all running in the browser, no app required.
-logo: /images/partners/blippar/logo.webp
-logoOnLight: true
+logo: /images/partners/blippar/logo-light.webp
+logoOnLight: false
 website: https://www.blippar.com
 industries:
   - corporate
