@@ -9,6 +9,7 @@ sector: banking
 tags: [ai, training]
 icon: lucide:landmark
 cover: /images/case-studies/cover-ai-upskilling-bank.webp
+partner: rpm
 region: المملكة العربية السعودية
 solution: برنامج تدريب على الذكاء الاصطناعي بمسارين ومنهج مشترك
 summary: برنامج على المستوى الوطني لإعداد الموظفين وصنّاع القرار لاستخدام الذكاء الاصطناعي بفاعلية وأمان، تزامنًا مع إدخاله في أعمال البنك.

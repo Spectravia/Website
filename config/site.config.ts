@@ -97,7 +97,7 @@ export const siteConfig = {
   contactForm: {
     messageMaxLength: 4000,
     /** Topics offered in the form; values are i18n keys under `contact.topics` */
-    topics: ['general', 'xr', 'ai', 'platforms', 'partnership'],
+    topics: ['call', 'ai', 'xr', 'platforms', 'partnership', 'general'],
   },
 } as const
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-/** Closing call-to-action band. Defaults to the generic "talk to us" copy. */
+/** Closing call-to-action band: book a call (primary) or send a message. Defaults to the generic copy. */
 const props = defineProps<{
   title?: string
   text?: string
@@ -26,14 +26,22 @@ const site = useSite()
             {{ props.text ?? t('cta.text') }}
           </p>
         </div>
-        <UiButton
-          :to="props.to ?? site.headerCta.to"
-          variant="primary"
-          size="lg"
-          icon="lucide:arrow-right"
-        >
-          {{ props.label ?? t('cta.button') }}
-        </UiButton>
+        <div class="cta-banner__actions">
+          <UiButton
+            :to="props.to ?? '/contact?topic=call'"
+            variant="primary"
+            size="lg"
+            icon="lucide:arrow-right"
+          >
+            {{ props.label ?? t('cta.button') }}
+          </UiButton>
+          <UiButton
+            :to="site.headerCta.to"
+            size="lg"
+          >
+            {{ t('cta.secondary') }}
+          </UiButton>
+        </div>
       </div>
     </div>
   </section>

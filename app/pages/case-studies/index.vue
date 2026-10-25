@@ -118,6 +118,10 @@ const filtered = computed(() =>
         >
           {{ t('caseStudies.noResults') }}
         </p>
+
+        <p class="case-nda">
+          {{ t('caseStudies.nda') }}
+        </p>
       </div>
     </section>
 

@@ -1,16 +1,19 @@
 <script setup lang="ts">
+const localePath = useLocalePath()
 const { data: page } = await usePageContent('home')
 const { data: services } = await useServices()
 const { data: industries } = await useIndustries()
 const { data: partners } = await usePartners()
 const { data: cases } = await useCaseStudies()
+const { data: team } = await useTeam()
 
 if (!page.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 
 usePageSeo({ title: () => page.value?.title, description: () => page.value?.description })
 
-const intro = computed(() => findSection(page.value, 'intro'))
-const pillars = computed(() => findSection(page.value, 'pillars'))
+const proof = computed(() => findSection(page.value, 'proof'))
+const how = computed(() => findSection(page.value, 'how'))
+const about = computed(() => findSection(page.value, 'about'))
 const servicesSection = computed(() => findSection(page.value, 'services'))
 const industriesSection = computed(() => findSection(page.value, 'industries'))
 const partnersSection = computed(() => findSection(page.value, 'partners'))
@@ -22,65 +25,31 @@ const featuredCases = computed(() => (cases.value ?? []).filter(c => c.featured)
   <div v-if="page">
     <BlocksHomeHero :hero="page.hero" />
 
-    <!-- Intro -->
+    <!-- Proof strip: headline results -->
     <section
-      v-if="intro"
-      class="section section--spaced"
-    >
-      <div class="container split">
-        <div>
-          <UiSectionHeader
-            :eyebrow="intro.eyebrow"
-            :title="intro.title"
-          />
-          <UiRichText
-            v-reveal="100"
-            :text="intro.text"
-            large
-          />
-        </div>
-        <figure
-          v-if="intro.image"
-          v-reveal="200"
-          class="media-frame"
-        >
-          <img
-            :src="intro.image"
-            alt=""
-            width="1600"
-            height="873"
-            loading="lazy"
-          >
-        </figure>
-      </div>
-    </section>
-
-    <!-- Pillars: mission / team / services -->
-    <section
-      v-if="pillars?.items?.length"
-      class="section"
+      v-if="proof?.items?.length"
+      class="section proof-section"
     >
       <div class="container">
-        <UiSectionHeader
-          :eyebrow="pillars.eyebrow"
-          :title="pillars.title"
-        />
-        <div class="grid grid--3">
-          <article
-            v-for="(item, i) in pillars.items"
-            :key="item.title"
-            v-reveal="i * 100"
-            class="pillar"
+        <ul
+          class="proof-strip"
+          role="list"
+        >
+          <li
+            v-for="(stat, i) in proof.items"
+            :key="stat.title + i"
+            v-reveal="i * 80"
           >
-            <span class="pillar__index">0{{ i + 1 }}</span>
-            <h3 class="pillar__title">
-              {{ item.title }}
-            </h3>
-            <p class="pillar__text">
-              {{ item.text }}
-            </p>
-          </article>
-        </div>
+            <NuxtLink
+              v-if="stat.to"
+              :to="localePath(stat.to)"
+              class="proof-strip__item"
+            >
+              <span class="proof-strip__value text-gradient">{{ stat.title }}</span>
+              <span class="proof-strip__label">{{ stat.text }}</span>
+            </NuxtLink>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -101,29 +70,6 @@ const featuredCases = computed(() => (cases.value ?? []).filter(c => c.featured)
             :key="service.slug"
             v-reveal="i * 100"
             :service="service"
-            linked
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Industries -->
-    <section
-      v-if="industriesSection"
-      class="section"
-    >
-      <div class="container">
-        <UiSectionHeader
-          :eyebrow="industriesSection.eyebrow"
-          :title="industriesSection.title"
-          :lead="industriesSection.lead"
-        />
-        <div class="grid grid--3">
-          <BlocksIndustryCard
-            v-for="(industry, i) in industries"
-            :key="industry.slug"
-            v-reveal="(i % 3) * 100"
-            :industry="industry"
             linked
           />
         </div>
@@ -163,6 +109,65 @@ const featuredCases = computed(() => (cases.value ?? []).filter(c => c.featured)
       </div>
     </section>
 
+    <!-- How we work -->
+    <section
+      v-if="how?.items?.length"
+      class="section section--spaced"
+    >
+      <div class="container">
+        <UiSectionHeader
+          :eyebrow="how.eyebrow"
+          :title="how.title"
+          :lead="how.lead"
+        />
+        <ol class="process">
+          <li
+            v-for="(step, i) in how.items"
+            :key="step.title"
+            v-reveal="i * 100"
+            class="process__item"
+          >
+            <span
+              class="process__icon"
+              aria-hidden="true"
+            >
+              <Icon :name="step.icon ?? 'lucide:circle'" />
+            </span>
+            <span class="process__index">0{{ i + 1 }}</span>
+            <h3 class="process__title">
+              {{ step.title }}
+            </h3>
+            <p class="process__text">
+              {{ step.text }}
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Industries -->
+    <section
+      v-if="industriesSection"
+      class="section"
+    >
+      <div class="container">
+        <UiSectionHeader
+          :eyebrow="industriesSection.eyebrow"
+          :title="industriesSection.title"
+          :lead="industriesSection.lead"
+        />
+        <div class="grid grid--3">
+          <BlocksIndustryCard
+            v-for="(industry, i) in industries"
+            :key="industry.slug"
+            v-reveal="(i % 3) * 100"
+            :industry="industry"
+            linked
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- Partners -->
     <section
       v-if="partnersSection"
@@ -183,6 +188,64 @@ const featuredCases = computed(() => (cases.value ?? []).filter(c => c.featured)
             compact
           />
         </div>
+      </div>
+    </section>
+
+    <!-- About teaser with leadership -->
+    <section
+      v-if="about"
+      class="section section--spaced"
+    >
+      <div class="container about-teaser">
+        <div>
+          <UiSectionHeader
+            :eyebrow="about.eyebrow"
+            :title="about.title"
+          />
+          <UiRichText
+            v-reveal="100"
+            :text="about.text"
+            large
+          />
+          <UiButton
+            v-if="about.cta"
+            :to="about.cta.to"
+            icon="lucide:arrow-right"
+            class="about-teaser__cta"
+          >
+            {{ about.cta.label }}
+          </UiButton>
+        </div>
+        <ul
+          class="leaders"
+          role="list"
+        >
+          <li
+            v-for="(member, i) in team"
+            :key="member.name"
+            v-reveal="i * 100"
+            class="leaders__item"
+          >
+            <span class="leaders__avatar">
+              <img
+                v-if="member.photo"
+                :src="member.photo"
+                :alt="member.name"
+                width="96"
+                height="96"
+                loading="lazy"
+              >
+              <span
+                v-else
+                aria-hidden="true"
+              >{{ member.name.split(/\s+/).map(part => part[0]).slice(0, 2).join('') }}</span>
+            </span>
+            <span>
+              <span class="leaders__name">{{ member.name }}</span>
+              <span class="leaders__role">{{ member.roles?.[0] }}</span>
+            </span>
+          </li>
+        </ul>
       </div>
     </section>
 

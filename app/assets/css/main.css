@@ -24,6 +24,7 @@
 @import './components/prose.css' layer(components);
 @import './components/cta.css' layer(components);
 @import './components/case-study.css' layer(components);
+@import './components/home.css' layer(components);
 
 @import './utilities.css' layer(utilities);
 
