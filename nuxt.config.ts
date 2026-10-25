@@ -6,7 +6,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     '@nuxtjs/i18n',
-    '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/eslint',
   ],
@@ -98,15 +97,6 @@ export default defineNuxtConfig({
 
   eslint: {
     config: { stylistic: true },
-  },
-
-  fonts: {
-    defaults: { weights: [300, 400, 500, 600, 700], styles: ['normal'] },
-    families: [
-      { name: 'Sora', provider: 'google' },
-      { name: 'IBM Plex Sans', provider: 'google' },
-      { name: 'IBM Plex Sans Arabic', provider: 'google' },
-    ],
   },
 
   i18n: {
