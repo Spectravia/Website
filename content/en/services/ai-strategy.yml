@@ -1,8 +1,8 @@
 slug: ai-strategy
-order: 3
+order: 1
 icon: lucide:brain-circuit
-title: Building AI Strategy from the Ground Up
-summary: A bottom-up pathway from AI fundamentals to an organization-wide strategy that delivers impact.
+title: AI Strategy & Training
+summary: Train every team on AI, then turn that skill into a strategy, automation and AI agents that pay off.
 text: |
   We follow a bottom-up approach to artificial intelligence, starting with foundational AI knowledge and gradually building toward advanced, organization-wide strategy. Our programs begin by equipping teams with essential concepts, practical skills and hands-on understanding, then progress into applied AI, automation, data intelligence and strategic adoption frameworks.
 
@@ -10,9 +10,9 @@ text: |
 features:
   - AI foundations for every team
   - Hands-on, applied AI workshops
-  - Automation and data-intelligence use cases
+  - AI agents for voice and chat, in Arabic and English
+  - Computer vision and automation
   - AI for business leaders and decision-makers
-  - Adoption frameworks and governance
-  - Organization-wide AI roadmap
+  - Organization-wide AI strategy and governance
 partners:
   - rpm

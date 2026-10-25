@@ -5,7 +5,7 @@ name: RPM Training Solutions
 order: 4
 tagline: RPM Training Solutions
 summary: A Dubai-based performance-transformation partner with over two decades of experience delivering customized leadership, sales and organizational programmes across the GCC.
-logo: /images/partners/rpm/logo-white.webp
+logo: /images/partners/rpm/logo-light.webp
 logoOnLight: false
 website: https://rpmts.com
 industries:

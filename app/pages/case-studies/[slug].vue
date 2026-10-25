@@ -19,6 +19,41 @@ usePageSeo({
   image: () => item.value?.cover,
 })
 
+// Structured data: the case study as an Article, plus its breadcrumb trail
+const { public: { siteUrl } } = useRuntimeConfig()
+useHead(() => {
+  if (!item.value) return {}
+  const url = `${siteUrl}${route.path}`
+  return {
+    script: [{
+      type: 'application/ld+json',
+      key: 'case-study-ld',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Article',
+            'headline': item.value.title,
+            'description': item.value.description,
+            'url': url,
+            ...(item.value.cover ? { image: `${siteUrl}${item.value.cover}` } : {}),
+            'author': { '@id': `${siteUrl}/#organization` },
+            'publisher': { '@id': `${siteUrl}/#organization` },
+          },
+          {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': t('nav.home'), 'item': `${siteUrl}${localePath('/')}` },
+              { '@type': 'ListItem', 'position': 2, 'name': t('nav.caseStudies'), 'item': `${siteUrl}${localePath('/case-studies')}` },
+              { '@type': 'ListItem', 'position': 3, 'name': item.value.title, 'item': url },
+            ],
+          },
+        ],
+      }),
+    }],
+  }
+})
+
 const partner = computed(() =>
   item.value?.partner ? partners.value?.find(p => p.path === `/partners/${item.value?.partner}`) : undefined,
 )
@@ -84,7 +119,10 @@ const related = computed(() => {
         <dl class="facts">
           <div class="facts__item">
             <dt>{{ t('caseStudies.client') }}</dt>
-            <dd>{{ item.client }}</dd>
+            <dd>
+              {{ item.client }}
+              <span class="facts__note">{{ t('caseStudies.ndaShort') }}</span>
+            </dd>
           </div>
           <div class="facts__item">
             <dt>{{ t('caseStudies.sector') }}</dt>
@@ -118,15 +156,16 @@ const related = computed(() => {
             <dt>{{ t('caseStudies.period') }}</dt>
             <dd>{{ item.period }}</dd>
           </div>
-          <div
-            v-if="partner"
-            class="facts__item"
-          >
-            <dt>{{ t('caseStudies.deliveredWith') }}</dt>
-            <dd>
+          <div class="facts__item">
+            <dt>{{ t('caseStudies.deliveredBy') }}</dt>
+            <dd v-if="partner">
+              {{ t('caseStudies.withPartnerPrefix') }}
               <NuxtLink :to="localePath(partner.path)">
                 {{ partner.name }}
               </NuxtLink>
+            </dd>
+            <dd v-else>
+              {{ t('caseStudies.inHouse') }}
             </dd>
           </div>
         </dl>

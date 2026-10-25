@@ -6,8 +6,8 @@ name: Blippar
 order: 3
 tagline: الواقع المعزّز للعلامات التجارية والمبدعين والتعليم
 summary: رائدة في الواقع المعزّز منذ عام 2011، تقدّم أدوات لإنشاء الواقع المعزّز دون برمجة، وحزمة تطوير WebAR، وأدوات تعليمية، واستوديو إبداعيًا — وكلها تعمل في المتصفح دون الحاجة إلى تطبيق.
-logo: /images/partners/blippar/logo.webp
-logoOnLight: true
+logo: /images/partners/blippar/logo-light.webp
+logoOnLight: false
 website: https://www.blippar.com
 industries:
   - corporate
