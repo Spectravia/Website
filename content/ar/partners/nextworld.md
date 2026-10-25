@@ -6,8 +6,8 @@ name: Next World
 order: 2
 tagline: تدريب السلامة والمهارات الشخصية بالواقع الافتراضي
 summary: حلّ تدريبي متكامل بالواقع الافتراضي — مكتبة دورات ونظام إدارة تعلّم مع تحليلات ونظارات جاهزة للاستخدام — للسلامة في بيئات العمل عالية المخاطر والمهارات الشخصية.
-logo: /images/partners/nextworld/logo.webp
-logoOnLight: true
+logo: /images/partners/nextworld/logo-light.webp
+logoOnLight: false
 website: https://www.nextworldxr.com
 industries:
   - energy
