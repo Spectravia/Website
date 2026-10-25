@@ -1,0 +1,4 @@
+# Netlify only: keeps the Netlify preview copy (spectravia.netlify.app) out of search results.
+# Hostinger ignores this file, and `npm run deploy` does not upload it.
+/*
+  X-Robots-Tag: noindex

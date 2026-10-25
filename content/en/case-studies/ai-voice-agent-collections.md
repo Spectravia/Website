@@ -7,6 +7,7 @@ client: Leading Saudi real estate developer
 sector: real-estate
 tags: [ai, voice-ai, automation, customer-experience]
 icon: lucide:phone-call
+cover: /images/case-studies/cover-ai-voice-agent-collections.webp
 region: Saudi Arabia
 solution: Unified data foundation + outbound AI voice agent
 summary: Data foundation first, then a voice agent on top — calling customers in local Saudi Arabic, negotiating payment plans and logging every outcome back to the CRM.

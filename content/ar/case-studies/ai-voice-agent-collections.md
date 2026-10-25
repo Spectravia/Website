@@ -8,6 +8,7 @@ client: مطوّر عقاري سعودي رائد
 sector: real-estate
 tags: [ai, voice-ai, automation, customer-experience]
 icon: lucide:phone-call
+cover: /images/case-studies/cover-ai-voice-agent-collections.webp
 region: المملكة العربية السعودية
 solution: منصة بيانات موحّدة + وكيل صوتي بالذكاء الاصطناعي للمكالمات الصادرة
 summary: البيانات أولًا، ثم وكيل صوتي فوقها — يتصل بالعملاء باللهجة السعودية، ويتفاوض على خطط السداد، ويسجّل كل نتيجة في نظام إدارة علاقات العملاء.

@@ -3,7 +3,7 @@ title: RPM Training Solutions
 description: RPM Training Solutions (Resource Performance Management) delivers leadership, sales and organizational performance programmes across the GCC, in partnership with Spectravia.
 name: RPM Training Solutions
 order: 4
-tagline: Resource Performance Management — maximizing potential
+tagline: RPM Training Solutions
 summary: A Dubai-based performance-transformation partner with over two decades of experience delivering customized leadership, sales and organizational programmes across the GCC.
 logo: /images/partners/rpm/logo-white.webp
 logoOnLight: false

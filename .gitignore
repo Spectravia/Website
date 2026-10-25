@@ -31,3 +31,4 @@ release
 
 # PHP endpoint secrets (SMTP) — uploaded by the deploy script, never committed
 php/config.php
+design/covers/out/

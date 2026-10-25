@@ -8,6 +8,7 @@ client: شبكة إقليمية من المؤسسات التعليمية
 sector: education
 tags: [ai, voice-ai, automation, customer-experience]
 icon: lucide:headset
+cover: /images/case-studies/cover-ai-call-center-agent.webp
 solution: وكيل مركز اتصال بالذكاء الاصطناعي باللغة العربية مع 3 مسارات عمل متكاملة
 summary: وكيل افتراضي يرد بلهجة سعودية طبيعية، وينجز الطلبات مباشرة في أنظمة المؤسسة، ويحيل الحالات المعقّدة إلى أحد الموظفين.
 highlight:
