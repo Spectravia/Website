@@ -40,7 +40,7 @@
 }
 
 .brand-logo img {
-  height: 40px;
+  height: 56px;
   width: auto;
 }
 
@@ -184,7 +184,7 @@
 /* Small phones: compact logo, icon-only language switch (label kept for screen readers) */
 @media (max-width: 479px) {
   .brand-logo img {
-    height: 32px;
+    height: 44px;
   }
 
   .lang-switch {

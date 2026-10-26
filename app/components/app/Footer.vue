@@ -14,7 +14,7 @@ const year = new Date().getFullYear()
             :src="site.brand.logo"
             :alt="site.name"
             width="180"
-            height="88"
+            height="83"
             loading="lazy"
           >
           <p class="site-footer__tagline">
