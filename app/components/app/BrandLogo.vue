@@ -15,8 +15,8 @@ const { t } = useI18n()
     <img
       :src="variant === 'full' ? site.brand.logo : site.brand.logoCompact"
       :alt="site.name"
-      width="200"
-      height="44"
+      width="136"
+      height="56"
     >
   </NuxtLink>
 </template>

@@ -29,9 +29,9 @@ export const siteConfig = {
 
   brand: {
     /** Full logo (mark + wordmark + tagline). Replace the file to rebrand. */
-    logo: '/images/brand/spectravia-logo.svg',
-    /** Compact horizontal logo used in the header */
-    logoCompact: '/images/brand/spectravia-logo-compact.svg',
+    logo: '/images/brand/spectravia-logo-official.webp',
+    /** Header logo: the official logo without the tagline (unreadable at header size) */
+    logoCompact: '/images/brand/spectravia-logo-header.webp',
     /** Square mark used for favicon / social cards */
     mark: '/images/brand/spectravia-mark.svg',
     /** Default social share image (1200x630 recommended) */
