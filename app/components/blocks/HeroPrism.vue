@@ -5,13 +5,17 @@
  */
 const colors = ['violet', 'blue', 'cyan', 'green', 'yellow', 'red'] as const
 
-/** Each ray starts as a thin slice on the prism face and fans out to the right edge. */
+/**
+ * Each ray starts as a thin slice on the prism face and fans out to the right edge.
+ * `pulse` is the ray's centre line, along which a pulse of light travels.
+ */
 const rays = colors.map((color, i) => {
   const startTop = 286 + i * 6
   const endTop = -40 + i * 115
   return {
     color,
     points: `548,${startTop} 548,${startTop + 6} 900,${endTop + 95} 900,${endTop}`,
+    pulse: { x1: 548, y1: startTop + 3, x2: 900, y2: endTop + 47 },
   }
 })
 </script>
@@ -75,6 +79,13 @@ const rays = colors.map((color, i) => {
       points="120,360 120,364 470,302 470,298"
       fill="url(#prism-in)"
     />
+    <line
+      class="prism__pulse-in"
+      x1="120"
+      y1="362"
+      x2="470"
+      y2="300"
+    />
 
     <!-- spectrum fan (blurred glow + crisp layer) -->
     <g
@@ -95,6 +106,16 @@ const rays = colors.map((color, i) => {
         :class="`prism__ray prism__ray--${i + 1}`"
         :points="ray.points"
         :fill="`url(#prism-${ray.color})`"
+      />
+    </g>
+
+    <!-- pulses of light leaving the prism along each ray -->
+    <g class="prism__pulses">
+      <line
+        v-for="(ray, i) in rays"
+        :key="ray.color"
+        :class="`prism__pulse prism__pulse--${ray.color} prism__pulse--${i + 1}`"
+        v-bind="ray.pulse"
       />
     </g>
 

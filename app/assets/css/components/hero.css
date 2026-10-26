@@ -70,23 +70,68 @@
 
 .prism__ray {
   opacity: 0.75;
-  animation: prism-shimmer 6s ease-in-out infinite;
 }
 
-.prism__ray--2 { animation-delay: -1s; }
-.prism__ray--3 { animation-delay: -2s; }
-.prism__ray--4 { animation-delay: -3s; }
-.prism__ray--5 { animation-delay: -4s; }
-.prism__ray--6 { animation-delay: -5s; }
+/* Light pulse: white light enters the prism, then a pulse runs out along each colour. */
+.prism__pulse-in {
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 40 400;
+  filter: drop-shadow(0 0 6px #fff);
+  animation: prism-pulse-in 3s linear infinite;
+}
 
-@keyframes prism-shimmer {
-  0%, 100% { opacity: 0.75; }
-  50% { opacity: 0.35; }
+.prism__pulse {
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 60 900;
+  stroke-dashoffset: 960;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 8px currentcolor);
+  animation: prism-pulse-out 3s linear 1.1s infinite;
+}
+
+.prism__pulse--violet { color: var(--spectrum-violet); stroke: var(--spectrum-violet); }
+.prism__pulse--blue { color: var(--spectrum-blue); stroke: var(--spectrum-blue); }
+.prism__pulse--cyan { color: var(--spectrum-cyan); stroke: var(--spectrum-cyan); }
+.prism__pulse--green { color: var(--spectrum-green); stroke: var(--spectrum-green); }
+.prism__pulse--yellow { color: var(--spectrum-yellow); stroke: var(--spectrum-yellow); }
+.prism__pulse--red { color: var(--spectrum-red); stroke: var(--spectrum-red); }
+
+.prism__pulse--2 { animation-delay: 1.18s; }
+.prism__pulse--3 { animation-delay: 1.26s; }
+.prism__pulse--4 { animation-delay: 1.34s; }
+.prism__pulse--5 { animation-delay: 1.42s; }
+.prism__pulse--6 { animation-delay: 1.5s; }
+
+.prism__glow {
+  animation: prism-flash 3s ease-in-out 0.9s infinite;
+}
+
+@keyframes prism-pulse-in {
+  from { stroke-dashoffset: 440; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes prism-pulse-out {
+  0% { stroke-dashoffset: 60; }
+  60%, 100% { stroke-dashoffset: -560; }
+}
+
+@keyframes prism-flash {
+  0%, 100% { opacity: 0.6; }
+  15% { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .prism__ray {
+  .prism__glow {
     animation: none;
+  }
+
+  .prism__pulse-in,
+  .prism__pulses {
+    display: none;
   }
 }
 
