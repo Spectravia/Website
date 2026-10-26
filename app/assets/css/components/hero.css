@@ -58,7 +58,7 @@
 }
 
 .prism__fan--glow {
-  opacity: 0.55;
+  opacity: 0.3;
 }
 
 .prism__stop--violet { stop-color: var(--spectrum-violet); }
@@ -69,7 +69,7 @@
 .prism__stop--red { stop-color: var(--spectrum-red); }
 
 .prism__ray {
-  opacity: 0.75;
+  opacity: 0.4;
 }
 
 /* Light pulse: white light enters the prism, then a pulse runs out along each colour. */
