@@ -86,7 +86,8 @@ export default defineNuxtConfig({
     // server still handles /api/* (contact form).
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/ar', '/sitemap.xml'],
+      // /deck is not linked from the site, so it is listed explicitly
+      routes: ['/', '/ar', '/sitemap.xml', '/deck', '/ar/deck'],
       failOnError: false,
     },
   },
