@@ -38,6 +38,7 @@ npm run dev             # http://localhost:3000
 | `npm run lint` / `lint:fix` | ESLint (incl. stylistic rules) |
 | `npm run typecheck` | Type-check app and server with `vue-tsc` |
 | `npm run images [-- <folder>]` | Convert PNG/JPG under `public/images` to optimized WebP |
+| `npm run deck -- <file.pptx>` | Turn a PowerPoint into the slide images (and PDF) shown on `/deck`; needs LibreOffice and Poppler |
 | `npm run fonts` | Re-copy the font files from npm (Fontsource) into `public/fonts` and regenerate `fonts.css`; edit the list in `scripts/vendor-fonts.mjs` to change fonts |
 
 ## Project structure
@@ -91,6 +92,7 @@ nuxt.config.ts
 - **Add an industry or service** — add a YAML file to `industries/` or `services/` (`order` controls sorting).
 - **Add a simple page** (legal, etc.) — add `content/<locale>/docs/<name>.md` → `/<name>`.
 - **Videos** — in a partner's `media:` list, switch an entry from `provider: placeholder` to `provider: vimeo` (`id: "<videoId>"` or `"<videoId>:<hash>"` for unlisted videos) or `provider: youtube` (`id: "<videoId>"`). Self-hosted files use `provider: file` with `src:`. Embeds only load when the visitor clicks play.
+- **Pitch deck (`/deck`)** — a full-screen slide viewer shared by link (Next/Back buttons, arrow keys, swipe, slide overview, full screen; `#5` in the link opens slide 5). It is not linked from the site, is marked `noindex` and stays out of the sitemap. To replace the deck run `npm run deck -- path/to/deck.pptx`, then list one alt text per slide in `config/deck.config.ts` (`showDownload: true` adds a "Download PDF" button). Animations and transitions are not kept.
 - **Images** — drop originals into `public/images/...` and run `npm run images` to generate `.webp` versions; reference the `.webp` in content.
 
 If an Arabic file is missing, the English version is shown as a fallback.

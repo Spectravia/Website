@@ -4,6 +4,7 @@
  * Errors (exit 1, block `npm run deploy`): missing/duplicate title or description,
  * missing canonical / H1 / hreflang / og:image / structured data, images without
  * alt, pages missing from the sitemap or sitemap URLs without a page.
+ * Pages marked noindex (e.g. /deck, shared by link only) must stay out of the sitemap.
  * Warnings: titles > 65 or descriptions outside 70-170 characters.
  */
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
@@ -27,6 +28,7 @@ const warnings = []
 const titles = new Map()
 const descriptions = new Map()
 const pagePaths = new Set()
+const noindexPaths = new Set()
 
 const pages = walk(dir).filter(f => f.endsWith('index.html'))
 const siteUrl = pick(readFileSync(join(dir, 'index.html'), 'utf8'), /rel="canonical" href="(https?:\/\/[^/"]+)/)
@@ -34,7 +36,8 @@ const siteUrl = pick(readFileSync(join(dir, 'index.html'), 'utf8'), /rel="canoni
 for (const file of pages) {
   const url = '/' + relative(dir, file).split(sep).join('/').replace(/index\.html$/, '').replace(/\/$/, '')
   const html = readFileSync(file, 'utf8')
-  pagePaths.add(url)
+  if (/<meta name="robots" content="[^"]*noindex/.test(html)) noindexPaths.add(url)
+  else pagePaths.add(url)
   const err = msg => errors.push(`${url}: ${msg}`)
   const warn = msg => warnings.push(`${url}: ${msg}`)
 
@@ -74,7 +77,10 @@ else {
   const locs = [...readFileSync(sitemapFile, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)]
     .map(m => m[1].replace(siteUrl, '') || '/')
   for (const p of pagePaths) if (!locs.includes(p)) errors.push(`${p}: page is not in sitemap.xml`)
-  for (const l of locs) if (!pagePaths.has(l)) errors.push(`sitemap.xml lists ${l} but no such page was built`)
+  for (const l of locs) {
+    if (noindexPaths.has(l)) errors.push(`sitemap.xml lists ${l}, which is marked noindex`)
+    else if (!pagePaths.has(l)) errors.push(`sitemap.xml lists ${l} but no such page was built`)
+  }
 }
 if (!existsSync(join(dir, 'robots.txt'))) errors.push('robots.txt missing')
 if (!existsSync(join(dir, '.htaccess'))) errors.push('.htaccess missing (redirects, 404, caching)')

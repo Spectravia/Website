@@ -21,7 +21,8 @@
     "setup": "node scripts/setup.mjs",
     "deploy": "node scripts/deploy-ftp.mjs",
     "images": "node scripts/optimize-images.mjs",
-    "fonts": "node scripts/vendor-fonts.mjs"
+    "fonts": "node scripts/vendor-fonts.mjs",
+    "deck": "node scripts/deck.mjs"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.142",
